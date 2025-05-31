@@ -1,4 +1,4 @@
-body {
+  body {
   font-family: 'Inter', sans-serif;
   margin: 0;
   background-color: #f9f9fb;
@@ -186,7 +186,7 @@ nav a:hover {
   color: #000;
 }
 
-/* ✅ Updated About Me Section with Side-by-Side Stats */
+/* ✅ About Me Section with Stats */
 .about-section {
   padding: 60px 20px;
   background-color: #ffffff;
@@ -246,4 +246,40 @@ nav a:hover {
   font-size: 15px;
   color: #333;
   margin: 0;
+}
+
+/* ✅ Skills Section */
+.skills-section {
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align: center;
+  border-top: 1px solid #eee;
+}
+
+.skills-section h2 {
+  font-size: 28px;
+  color: #007bff;
+  margin-bottom: 30px;
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.skills-tags span {
+  background: #ffffff;
+  border-radius: 25px;
+  padding: 10px 18px;
+  font-size: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  color: #333;
+  transition: transform 0.2s ease;
+}
+
+.skills-tags span:hover {
+  transform: scale(1.05);
+  background-color: #f0f8ff;
 }
