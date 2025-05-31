@@ -53,7 +53,7 @@ nav a:hover {
   margin-top: 40px;
 }
 
-/* ✅ Updated intro-box with transparent frosted glass style */
+/* ✅ Transparent frosted glass box */
 .intro-box {
   display: flex;
   justify-content: space-between;
@@ -62,11 +62,11 @@ nav a:hover {
   max-width: 1000px;
   padding: 40px;
   border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.75); /* transparent white */
-  backdrop-filter: blur(10px); /* frosted effect */
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 2px solid rgba(0, 123, 255, 0.25); /* soft blue border */
-  box-shadow: 0 12px 25px rgba(0, 123, 255, 0.12); /* soft glow */
+  border: 2px solid rgba(0, 123, 255, 0.25);
+  box-shadow: 0 12px 25px rgba(0, 123, 255, 0.12);
 }
 
 .intro-left {
@@ -101,7 +101,7 @@ nav a:hover {
   margin-right: auto;
 }
 
-/* ✨ Dual Button Styling */
+/* ✅ Dual Button Styling */
 .buttons {
   margin-top: 20px;
 }
@@ -136,22 +136,22 @@ nav a:hover {
   color: white;
 }
 
-/* ✅ Blue circle with white symbol social icons */
+/* ✅ Blue circle with white symbol icons */
 .social-icons {
   margin-top: 20px;
 }
 
 .social-icons a {
   display: inline-flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   width: 36px;
   height: 36px;
   margin: 0 8px;
+  font-size: 18px;
   background-color: #007bff;
   color: white;
   border-radius: 50%;
-  font-size: 16px;
   text-decoration: none;
   transition: transform 0.3s;
 }
@@ -160,7 +160,7 @@ nav a:hover {
   transform: scale(1.2);
 }
 
-/* ✅ Timezones section */
+/* ✅ Timezone clock section */
 .timezone-box {
   display: flex;
   flex-direction: column;
@@ -187,5 +187,5 @@ nav a:hover {
 .timezone p {
   margin: 4px 0 0;
   font-size: 14px;
-  color: #000; /* ✅ black time */
+  color: #000; /* ✅ black text for time/date */
 }
