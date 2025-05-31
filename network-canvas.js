@@ -1,4 +1,4 @@
-
+// Create and style canvas
 const canvas = document.createElement('canvas');
 canvas.id = 'network-canvas';
 canvas.style.position = 'fixed';
@@ -57,3 +57,48 @@ function drawNetwork() {
 resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
 requestAnimationFrame(drawNetwork);
+
+// Timezone with date and time
+function updateTime() {
+  const now = new Date();
+
+  const pstTime = now.toLocaleTimeString('en-US', {
+    timeZone: 'America/Los_Angeles',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit'
+  });
+  const pstDate = now.toLocaleDateString('en-US', {
+    timeZone: 'America/Los_Angeles'
+  });
+
+  const cstTime = now.toLocaleTimeString('en-US', {
+    timeZone: 'America/Chicago',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit'
+  });
+  const cstDate = now.toLocaleDateString('en-US', {
+    timeZone: 'America/Chicago'
+  });
+
+  const estTime = now.toLocaleTimeString('en-US', {
+    timeZone: 'America/New_York',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit'
+  });
+  const estDate = now.toLocaleDateString('en-US', {
+    timeZone: 'America/New_York'
+  });
+
+  document.getElementById('pst-time').innerHTML =
+    `<strong style="color:#007bff">${pstTime}</strong><br><span style="font-size:12px;">${pstDate}</span>`;
+  document.getElementById('cst-time').innerHTML =
+    `<strong style="color:#007bff">${cstTime}</strong><br><span style="font-size:12px;">${cstDate}</span>`;
+  document.getElementById('est-time').innerHTML =
+    `<strong style="color:#007bff">${estTime}</strong><br><span style="font-size:12px;">${estDate}</span>`;
+}
+
+setInterval(updateTime, 1000);
+updateTime();
