@@ -6,9 +6,9 @@
   <title>Pavan Kumar Aravapalli - DevOps Engineer</title>
 
   <!-- Fonts and Styles -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
   <!-- Background Canvas -->
   <script src="network-canvas.js" defer></script>
@@ -146,7 +146,7 @@
       width: 36px;
       height: 36px;
       margin: 0 8px;
-      font-size: 18px;
+      font-size: 16px;
       background-color: #007bff;
       color: white;
       border-radius: 50%;
@@ -246,9 +246,7 @@
 
       const pstTime = now.toLocaleTimeString('en-US', {
         timeZone: 'America/Los_Angeles',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit'
+        hour: '2-digit', minute: '2-digit', second: '2-digit'
       });
       const pstDate = now.toLocaleDateString('en-US', {
         timeZone: 'America/Los_Angeles'
@@ -256,9 +254,7 @@
 
       const cstTime = now.toLocaleTimeString('en-US', {
         timeZone: 'America/Chicago',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit'
+        hour: '2-digit', minute: '2-digit', second: '2-digit'
       });
       const cstDate = now.toLocaleDateString('en-US', {
         timeZone: 'America/Chicago'
@@ -266,17 +262,18 @@
 
       const estTime = now.toLocaleTimeString('en-US', {
         timeZone: 'America/New_York',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit'
+        hour: '2-digit', minute: '2-digit', second: '2-digit'
       });
       const estDate = now.toLocaleDateString('en-US', {
         timeZone: 'America/New_York'
       });
 
-      document.getElementById('pst-time').innerHTML = `<strong style="color:#000">${pstTime}</strong><br><span style="font-size:12px;">${pstDate}</span>`;
-      document.getElementById('cst-time').innerHTML = `<strong style="color:#000">${cstTime}</strong><br><span style="font-size:12px;">${cstDate}</span>`;
-      document.getElementById('est-time').innerHTML = `<strong style="color:#000">${estTime}</strong><br><span style="font-size:12px;">${estDate}</span>`;
+      document.getElementById('pst-time').innerHTML =
+        `<strong style="color:#000">${pstTime}</strong><br><span style="font-size:12px;">${pstDate}</span>`;
+      document.getElementById('cst-time').innerHTML =
+        `<strong style="color:#000">${cstTime}</strong><br><span style="font-size:12px;">${cstDate}</span>`;
+      document.getElementById('est-time').innerHTML =
+        `<strong style="color:#000">${estTime}</strong><br><span style="font-size:12px;">${estDate}</span>`;
     }
 
     setInterval(updateTime, 1000);
