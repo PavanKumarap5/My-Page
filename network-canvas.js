@@ -58,7 +58,7 @@ resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
 requestAnimationFrame(drawNetwork);
 
-// Timezone with date and time
+// Timezone with date and black time
 function updateTime() {
   const now = new Date();
 
@@ -93,11 +93,11 @@ function updateTime() {
   });
 
   document.getElementById('pst-time').innerHTML =
-    `<strong style="color:#007bff">${pstTime}</strong><br><span style="font-size:12px;">${pstDate}</span>`;
+    `<strong style="color:#000">${pstTime}</strong><br><span style="font-size:12px;">${pstDate}</span>`;
   document.getElementById('cst-time').innerHTML =
-    `<strong style="color:#007bff">${cstTime}</strong><br><span style="font-size:12px;">${cstDate}</span>`;
+    `<strong style="color:#000">${cstTime}</strong><br><span style="font-size:12px;">${cstDate}</span>`;
   document.getElementById('est-time').innerHTML =
-    `<strong style="color:#007bff">${estTime}</strong><br><span style="font-size:12px;">${estDate}</span>`;
+    `<strong style="color:#000">${estTime}</strong><br><span style="font-size:12px;">${estDate}</span>`;
 }
 
 setInterval(updateTime, 1000);
