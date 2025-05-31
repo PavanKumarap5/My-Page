@@ -186,28 +186,64 @@ nav a:hover {
   color: #000;
 }
 
-/* ✅ About Me Section Styling */
+/* ✅ Updated About Me Section with Side-by-Side Stats */
 .about-section {
   padding: 60px 20px;
   background-color: #ffffff;
   border-top: 1px solid #eee;
 }
 
-.about-container {
-  max-width: 900px;
+.about-grid {
+  max-width: 1000px;
   margin: 0 auto;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
-.about-container h2 {
+.about-text {
+  flex: 1 1 55%;
+}
+
+.about-text h2 {
   font-size: 28px;
   color: #007bff;
   margin-bottom: 20px;
+  text-align: left;
 }
 
-.about-container p {
+.about-text p {
   font-size: 16px;
   color: #444;
   line-height: 1.7;
   margin-bottom: 20px;
+}
+
+.about-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1 1 35%;
+}
+
+.stat-box {
+  background: #f4f6ff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.stat-box h3 {
+  font-size: 28px;
+  color: #007bff;
+  margin-bottom: 8px;
+}
+
+.stat-box p {
+  font-size: 15px;
+  color: #333;
+  margin: 0;
 }
