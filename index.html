@@ -284,79 +284,93 @@
 
     /* Experience Section */
     .experience-section {
-      padding: 60px 20px;
+      padding: 80px 20px;
       background: #fff;
+      text-align: center;
       border-top: 1px solid #eee;
     }
 
     .experience-section h2 {
       font-size: 28px;
-      text-align: center;
       color: #007bff;
-      margin-bottom: 40px;
+      margin-bottom: 60px;
     }
 
     .timeline {
       max-width: 1000px;
       margin: 0 auto;
-      border-left: 2px solid #007bff;
-      padding-left: 20px;
+      padding-left: 40px;
+      border-left: 3px solid #007bff;
+      position: relative;
     }
 
     .timeline-item {
-      margin-bottom: 40px;
       position: relative;
+      margin-bottom: 60px;
+      padding-left: 40px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .timeline-item:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 24px rgba(0, 123, 255, 0.1);
+      background: #ffffff;
+      border-radius: 12px;
     }
 
     .timeline-item::before {
       content: '';
       position: absolute;
-      left: -9px;
+      left: -22px;
       top: 5px;
-      width: 14px;
-      height: 14px;
-      background: #007bff;
+      width: 12px;
+      height: 12px;
+      background-color: #007bff;
       border-radius: 50%;
+      box-shadow: 0 0 0 3px #fff;
+      z-index: 1;
     }
 
     .timeline-date {
+      position: absolute;
+      left: -120px;
+      top: 0;
       font-size: 14px;
       color: #007bff;
-      margin-bottom: 8px;
+      font-weight: bold;
+      background: #fff;
     }
 
     .timeline-content {
-      background: #fff;
-      padding: 20px;
-      border: 1px solid #007bff;
-      border-radius: 10px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-      transition: transform 0.3s ease;
-    }
-
-    .timeline-content:hover {
-      transform: scale(1.03);
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 20px 25px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      text-align: left;
     }
 
     .timeline-content h3 {
-      margin-top: 0;
+      margin: 0;
       font-size: 20px;
+      color: #333;
     }
 
-    .role {
-      font-weight: bold;
+    .timeline-content .role {
+      font-size: 15px;
       color: #007bff;
-      margin-bottom: 10px;
+      margin: 8px 0 12px;
     }
 
     .timeline-content ul {
-      padding-left: 20px;
       margin: 0;
+      padding-left: 20px;
     }
 
-    .timeline-content li {
-      margin-bottom: 8px;
-      font-size: 15px;
+    .timeline-content ul li {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.7;
+      margin-bottom: 10px;
     }
   </style>
 </head>
@@ -443,11 +457,11 @@
           <h3>Liberty Mutual Finance</h3>
           <p class="role">DevOps Engineer</p>
           <ul>
-            <li>Automated AWS infrastructure with Terraform, improving provisioning speed and consistency.</li>
-            <li>Implemented CI/CD using GitHub Actions and Jenkins for multiple microservices.</li>
-            <li>Used ArgoCD and Helm to deploy Kubernetes workloads on EKS with zero downtime.</li>
-            <li>Monitored systems using Prometheus, Grafana, AWS CloudWatch, and optimized costs using auto-scaling.</li>
-            <li>Worked with the security team to implement IAM policies, OPA, Snyk, and SonarQube for compliance.</li>
+            <li>Automated AWS infrastructure using Terraform for consistent provisioning across environments.</li>
+            <li>Managed GitHub Actions and Jenkins pipelines for microservices deployment with built-in quality gates.</li>
+            <li>Used ArgoCD and Helm to deploy workloads to Amazon EKS with minimal downtime.</li>
+            <li>Configured Prometheus, Grafana, and CloudWatch for proactive monitoring and alerting.</li>
+            <li>Collaborated with security teams to implement IAM roles, SonarQube, Snyk, and OPA policies for compliance.</li>
           </ul>
         </div>
       </div>
@@ -458,9 +472,11 @@
           <h3>Synechron INC</h3>
           <p class="role">DevOps Engineer</p>
           <ul>
-            <li>Deployed containerized apps using Docker, Kubernetes, and Azure DevOps pipelines.</li>
-            <li>Automated configuration management with Ansible and monitored services via ELK & Datadog.</li>
-            <li>Developed scripts in Bash/Python for task automation and log processing.</li>
+            <li>Implemented CI/CD pipelines in Azure DevOps to automate deployment of microservices in AKS clusters.</li>
+            <li>Managed infrastructure automation with Ansible and Terraform for hybrid environments.</li>
+            <li>Built Docker images and integrated them into GitLab pipelines for QA and staging environments.</li>
+            <li>Used ELK Stack and Datadog for log aggregation, performance monitoring, and metrics visualization.</li>
+            <li>Created Bash and Python scripts to streamline operational workflows and data migration.</li>
           </ul>
         </div>
       </div>
