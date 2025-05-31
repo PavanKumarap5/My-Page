@@ -4,102 +4,145 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pavan Kumar Aravapalli - DevOps Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="network-canvas.js" defer></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: #f9f9fb;
+      color: #333;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+    .intro {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px 10%;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      margin: 40px auto;
+      max-width: 1200px;
+    }
+    .intro-left {
+      max-width: 600px;
+      text-align: center;
+    }
+    .intro-left img {
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+    }
+    .intro-left h1 {
+      font-size: 28px;
+      margin-top: 16px;
+    }
+    .intro-left h2 {
+      font-size: 18px;
+      color: #007bff;
+      margin-top: 10px;
+    }
+    .intro-left p {
+      font-size: 16px;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+    .timezone-box {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .timezone {
+      background: #f4f6ff;
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+    .timezone h4 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .timezone p {
+      margin: 4px 0 0;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-  <aside class="sidebar">
-    <img src="profile.jpg" alt="Pavan Kumar Aravapalli" class="profile-pic">
-    <h1>Pavan Kumar Aravapalli</h1>
-    <p>Certified DevOps Engineer</p>
+  <header>
+    <h2>Pavan Kumar Aravapalli</h2>
     <nav>
       <ul>
+        <li><a href="#">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <div class="timezones">
-      <p>PST | CST | EST</p>
+  </header>
+
+  <section class="intro">
+    <div class="intro-left">
+      <img src="profile.jpg" alt="Pavan Kumar Aravapalli">
+      <h1>Pavan Kumar Aravapalli</h1>
+      <h2>Certified DevOps Engineer</h2>
+      <p>Experienced DevOps Engineer specializing in cloud infrastructure, automation, and CI/CD pipelines.</p>
     </div>
-  </aside>
-
-  <main>
-    <section id="about" data-aos="fade-up">
-      <h2>About Me</h2>
-      <p>DevOps Engineer with 4+ years of experience specializing in cloud infrastructure, automation, and CI/CD pipelines.</p>
-    </section>
-
-    <section id="skills" data-aos="fade-right">
-      <h2>Skills</h2>
-      <div class="skill-tags">
-        <span>AWS</span><span>Azure</span><span>GCP</span><span>Docker</span><span>Kubernetes</span>
-        <span>Terraform</span><span>Helm</span><span>Jenkins</span><span>GitHub Actions</span><span>GitLab CI/CD</span>
-        <span>Azure DevOps</span><span>Ansible</span><span>Puppet</span><span>ArgoCD</span><span>Prometheus</span>
-        <span>Grafana</span><span>ELK Stack</span><span>Datadog</span><span>Python</span><span>Bash</span>
-        <span>PowerShell</span><span>Istio</span><span>OpenShift</span><span>AWS IAM</span><span>AAD</span>
-        <span>SonarQube</span><span>Trivy</span><span>Snyk</span><span>JMeter</span><span>OPA</span>
+    <div class="timezone-box">
+      <div class="timezone">
+        <h4>PST</h4>
+        <p id="pst-time"></p>
       </div>
-    </section>
+      <div class="timezone">
+        <h4>CST</h4>
+        <p id="cst-time"></p>
+      </div>
+      <div class="timezone">
+        <h4>EST</h4>
+        <p id="est-time"></p>
+      </div>
+    </div>
+  </section>
 
-    <section id="experience" data-aos="zoom-in">
-      <h2>Experience</h2>
-      <article>
-        <h3>Senior DevOps Engineer - Liberty Mutual Finance (Aug 2024 – Present)</h3>
-        <ul>
-          <li>Designed/implemented AWS infra (EC2, ECS, RDS, S3, etc.)</li>
-          <li>Built CI/CD with Jenkins, GitHub Actions, ArgoCD</li>
-          <li>Managed EKS clusters using Cluster Autoscaler, Karpenter</li>
-          <li>Reduced AWS costs by 30%</li>
-          <li>Security hardening with IAM, GuardDuty, WAF</li>
-          <li>Serverless migration (Lambda, API Gateway, DynamoDB)</li>
-          <li>Monitoring with Prometheus, Grafana, CloudWatch</li>
-          <li>Incident handling with PagerDuty, Splunk</li>
-        </ul>
-      </article>
-      <article>
-        <h3>DevOps Engineer - Coforge (Feb 2020 – July 2023)</h3>
-        <ul>
-          <li>Built Azure infra: AKS, Azure Functions, VMs</li>
-          <li>CI/CD with Azure DevOps, Jenkins, GitLab</li>
-          <li>IaC with Terraform and ARM templates</li>
-          <li>Container orchestration using Helm, Istio, AKS</li>
-          <li>Cost optimization using Spot VMs, Azure Advisor</li>
-          <li>Security with AAD, Sentinel, Key Vault</li>
-          <li>Monitoring via Azure Monitor, Log Analytics</li>
-        </ul>
-      </article>
-    </section>
-
-    <section id="certifications" data-aos="flip-left">
-      <h2>Certifications</h2>
-      <ul>
-        <li>AWS Certified Solutions Architect – Associate</li>
-        <li>HashiCorp Certified: Terraform Associate</li>
-        <li>Certified Kubernetes Administrator (CKA)</li>
-        <li>Certified Kubernetes Application Developer (CKAD)</li>
-      </ul>
-    </section>
-
-    <section id="contact" data-aos="fade-up">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:pavankumar23051@gmail.com">pavankumar23051@gmail.com</a></p>
-      <p>Phone: (513) 570-2537</p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/apavankumar7" target="_blank">apavankumar7</a></p>
-      <p>GitHub: <a href="https://github.com/PavanKumarap5/My-Page" target="_blank">PavanKumarap5</a></p>
-    </section>
-
-    <footer>
-      <p>&copy; 2025 Pavan Kumar Aravapalli</p>
-    </footer>
-  </main>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init();
+    function updateTime() {
+      const now = new Date();
+      const pst = now.toLocaleTimeString('en-US', { timeZone: 'America/Los_Angeles' });
+      const cst = now.toLocaleTimeString('en-US', { timeZone: 'America/Chicago' });
+      const est = now.toLocaleTimeString('en-US', { timeZone: 'America/New_York' });
+      document.getElementById('pst-time').innerText = pst;
+      document.getElementById('cst-time').innerText = cst;
+      document.getElementById('est-time').innerText = est;
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
   </script>
-  <script src="network-canvas.js"></script>
 </body>
 </html>
