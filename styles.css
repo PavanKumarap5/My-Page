@@ -1,0 +1,40 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  margin: 0;
+}
+.sidebar {
+  background: #2536eb;
+  color: white;
+  padding: 20px;
+  width: 250px;
+  height: 100vh;
+  box-sizing: border-box;
+}
+.sidebar h1 {
+  font-size: 20px;
+}
+.sidebar .profile-pic {
+  width: 100px;
+  border-radius: 50%;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar li {
+  margin: 10px 0;
+}
+main {
+  padding: 20px;
+  flex-grow: 1;
+  background: #f1f4f8;
+}
+.skill-tags span {
+  display: inline-block;
+  background: #120f4f;
+  color: white;
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
