@@ -53,6 +53,7 @@ nav a:hover {
   margin-top: 40px;
 }
 
+/* ✅ Updated intro-box with transparent frosted glass style */
 .intro-box {
   display: flex;
   justify-content: space-between;
@@ -61,11 +62,11 @@ nav a:hover {
   max-width: 1000px;
   padding: 40px;
   border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 2px solid rgba(0, 123, 255, 0.3);
-  box-shadow: 0 12px 25px rgba(0, 123, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.75); /* transparent white */
+  backdrop-filter: blur(10px); /* frosted effect */
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid rgba(0, 123, 255, 0.25); /* soft blue border */
+  box-shadow: 0 12px 25px rgba(0, 123, 255, 0.12); /* soft glow */
 }
 
 .intro-left {
@@ -100,34 +101,57 @@ nav a:hover {
   margin-right: auto;
 }
 
+/* ✨ Dual Button Styling */
 .buttons {
   margin-top: 20px;
 }
 
 .buttons a {
   display: inline-block;
-  background-color: #007bff;
-  color: white;
   padding: 10px 16px;
   border-radius: 6px;
   margin: 0 10px;
-  text-decoration: none;
   font-size: 14px;
-  transition: background 0.3s;
+  text-decoration: none;
+  transition: all 0.3s;
 }
 
-.buttons a:hover {
+.buttons a:first-child {
+  background-color: #007bff;
+  color: white;
+}
+
+.buttons a:first-child:hover {
   background-color: #0056b3;
 }
 
+.buttons a:last-child {
+  background-color: white;
+  color: #007bff;
+  border: 2px solid #007bff;
+}
+
+.buttons a:last-child:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* ✅ Blue circle with white symbol social icons */
 .social-icons {
   margin-top: 20px;
 }
 
 .social-icons a {
-  margin: 0 10px;
-  font-size: 22px;
-  color: #007bff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin: 0 8px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  font-size: 16px;
   text-decoration: none;
   transition: transform 0.3s;
 }
@@ -136,6 +160,7 @@ nav a:hover {
   transform: scale(1.2);
 }
 
+/* ✅ Timezones section */
 .timezone-box {
   display: flex;
   flex-direction: column;
@@ -162,4 +187,5 @@ nav a:hover {
 .timezone p {
   margin: 4px 0 0;
   font-size: 14px;
+  color: #000; /* ✅ black time */
 }
