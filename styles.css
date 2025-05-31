@@ -1,8 +1,8 @@
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;
-  padding: 0;
   background-color: #f9f9fb;
+  color: #333;
 }
 
 header {
@@ -10,11 +10,11 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  background-color: #ffffff;
+  background-color: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 999;
   flex-wrap: wrap;
 }
 
@@ -53,7 +53,7 @@ nav a:hover {
   margin-top: 40px;
 }
 
-/* ✅ Transparent frosted glass box */
+/* ✅ Transparent frosted glass intro box */
 .intro-box {
   display: flex;
   justify-content: space-between;
@@ -83,7 +83,7 @@ nav a:hover {
 
 .intro-left h1 {
   margin-top: 16px;
-  font-size: 26px;
+  font-size: 28px;
 }
 
 .intro-left .title {
@@ -94,14 +94,14 @@ nav a:hover {
 
 .intro-left p {
   margin-top: 12px;
-  font-size: 15px;
+  font-size: 16px;
   color: #555;
   max-width: 400px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* ✅ Dual Button Styling */
+/* ✅ Dual button styling */
 .buttons {
   margin-top: 20px;
 }
@@ -136,7 +136,7 @@ nav a:hover {
   color: white;
 }
 
-/* ✅ Blue circle with white symbol icons */
+/* ✅ Social icons - blue circle with white symbol */
 .social-icons {
   margin-top: 20px;
 }
@@ -148,7 +148,7 @@ nav a:hover {
   width: 36px;
   height: 36px;
   margin: 0 8px;
-  font-size: 18px;
+  font-size: 16px;
   background-color: #007bff;
   color: white;
   border-radius: 50%;
@@ -160,7 +160,7 @@ nav a:hover {
   transform: scale(1.2);
 }
 
-/* ✅ Timezone clock section */
+/* ✅ Timezone clock layout */
 .timezone-box {
   display: flex;
   flex-direction: column;
@@ -185,7 +185,7 @@ nav a:hover {
 }
 
 .timezone p {
-  margin: 4px 0 0;
   font-size: 14px;
-  color: #000; /* ✅ black text for time/date */
+  margin: 4px 0 0;
+  color: #000;
 }
