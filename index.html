@@ -7,7 +7,6 @@
 
   <!-- Fonts and Styles -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -62,10 +61,11 @@
       max-width: 1000px;
       padding: 40px;
       border-radius: 20px;
-      background-color: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(8px);
-      border: 2px solid rgba(0, 123, 255, 0.3);
-      box-shadow: 0 12px 25px rgba(0, 123, 255, 0.1);
+      background-color: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 2px solid rgba(0, 123, 255, 0.25);
+      box-shadow: 0 12px 25px rgba(0, 123, 255, 0.12);
     }
 
     .intro-left {
@@ -107,29 +107,50 @@
 
     .buttons a {
       display: inline-block;
-      background-color: #007bff;
-      color: white;
       padding: 10px 16px;
       border-radius: 6px;
       margin: 0 10px;
-      text-decoration: none;
       font-size: 14px;
-      transition: background 0.3s;
+      text-decoration: none;
+      transition: all 0.3s;
     }
 
-    .buttons a:hover {
+    .buttons a:first-child {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .buttons a:first-child:hover {
       background-color: #0056b3;
     }
 
+    .buttons a:last-child {
+      background-color: white;
+      color: #007bff;
+      border: 2px solid #007bff;
+    }
+
+    .buttons a:last-child:hover {
+      background-color: #007bff;
+      color: white;
+    }
+
     .social-icons {
-      margin-top: 16px;
+      margin-top: 20px;
     }
 
     .social-icons a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 36px;
+      height: 36px;
       margin: 0 8px;
-      font-size: 22px;
+      font-size: 18px;
+      background-color: #007bff;
+      color: white;
+      border-radius: 50%;
       text-decoration: none;
-      color: #007bff;
       transition: transform 0.3s;
     }
 
@@ -163,6 +184,7 @@
     .timezone p {
       font-size: 14px;
       margin: 4px 0 0;
+      color: #000;
     }
   </style>
 </head>
@@ -222,19 +244,41 @@
     function updateTime() {
       const now = new Date();
 
-      const pstTime = now.toLocaleTimeString('en-US', { timeZone: 'America/Los_Angeles', hour: '2-digit', minute: '2-digit', second: '2-digit' });
-      const pstDate = now.toLocaleDateString('en-US', { timeZone: 'America/Los_Angeles' });
+      const pstTime = now.toLocaleTimeString('en-US', {
+        timeZone: 'America/Los_Angeles',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      });
+      const pstDate = now.toLocaleDateString('en-US', {
+        timeZone: 'America/Los_Angeles'
+      });
 
-      const cstTime = now.toLocaleTimeString('en-US', { timeZone: 'America/Chicago', hour: '2-digit', minute: '2-digit', second: '2-digit' });
-      const cstDate = now.toLocaleDateString('en-US', { timeZone: 'America/Chicago' });
+      const cstTime = now.toLocaleTimeString('en-US', {
+        timeZone: 'America/Chicago',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      });
+      const cstDate = now.toLocaleDateString('en-US', {
+        timeZone: 'America/Chicago'
+      });
 
-      const estTime = now.toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour: '2-digit', minute: '2-digit', second: '2-digit' });
-      const estDate = now.toLocaleDateString('en-US', { timeZone: 'America/New_York' });
+      const estTime = now.toLocaleTimeString('en-US', {
+        timeZone: 'America/New_York',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      });
+      const estDate = now.toLocaleDateString('en-US', {
+        timeZone: 'America/New_York'
+      });
 
-      document.getElementById('pst-time').innerHTML = `<strong style="color:#007bff">${pstTime}</strong><br><span style="font-size:12px;">${pstDate}</span>`;
-      document.getElementById('cst-time').innerHTML = `<strong style="color:#007bff">${cstTime}</strong><br><span style="font-size:12px;">${cstDate}</span>`;
-      document.getElementById('est-time').innerHTML = `<strong style="color:#007bff">${estTime}</strong><br><span style="font-size:12px;">${estDate}</span>`;
+      document.getElementById('pst-time').innerHTML = `<strong style="color:#000">${pstTime}</strong><br><span style="font-size:12px;">${pstDate}</span>`;
+      document.getElementById('cst-time').innerHTML = `<strong style="color:#000">${cstTime}</strong><br><span style="font-size:12px;">${cstDate}</span>`;
+      document.getElementById('est-time').innerHTML = `<strong style="color:#000">${estTime}</strong><br><span style="font-size:12px;">${estDate}</span>`;
     }
+
     setInterval(updateTime, 1000);
     updateTime();
   </script>
