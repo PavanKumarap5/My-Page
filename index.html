@@ -4,10 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pavan Kumar Aravapalli - DevOps Engineer</title>
+
+  <!-- Fonts and Styles -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Background Canvas -->
   <script src="network-canvas.js" defer></script>
+
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -55,10 +61,11 @@
       width: 90%;
       max-width: 1000px;
       padding: 40px;
-      border: 2px solid #c0d3ff;
       border-radius: 20px;
-      background-color: white;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      background-color: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(8px);
+      border: 2px solid rgba(0, 123, 255, 0.3);
+      box-shadow: 0 12px 25px rgba(0, 123, 255, 0.1);
     }
 
     .intro-left {
@@ -120,9 +127,14 @@
 
     .social-icons a {
       margin: 0 8px;
-      font-size: 20px;
+      font-size: 22px;
       text-decoration: none;
       color: #007bff;
+      transition: transform 0.3s;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
     }
 
     .timezone-box {
@@ -144,9 +156,17 @@
     .timezone h4 {
       font-weight: bold;
       margin-bottom: 4px;
+      color: #007bff;
+      font-size: 16px;
+    }
+
+    .timezone p {
+      font-size: 14px;
+      margin: 4px 0 0;
     }
   </style>
 </head>
+
 <body>
   <header>
     <h2>Pavan Kumar Aravapalli</h2>
@@ -170,14 +190,14 @@
         <p>Experienced DevOps Engineer specializing in cloud infrastructure, automation, and CI/CD pipelines.</p>
 
         <div class="buttons">
-          <a href="mailto:pavankumar23051@gmail.com">📩 Contact Me</a>
-          <a href="#experience">🔍 View My Work</a>
+          <a href="mailto:pavankumar23051@gmail.com"><i class="fas fa-envelope"></i> Contact Me</a>
+          <a href="#experience"><i class="fas fa-briefcase"></i> View My Work</a>
         </div>
 
         <div class="social-icons">
-          <a href="https://www.linkedin.com/in/apavankumar7" target="_blank">🔗</a>
-          <a href="https://github.com/PavanKumarap5" target="_blank">💻</a>
-          <a href="mailto:pavankumar23051@gmail.com">📧</a>
+          <a href="https://www.linkedin.com/in/apavankumar7" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/PavanKumarap5" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="mailto:pavankumar23051@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
       </div>
 
@@ -201,12 +221,19 @@
   <script>
     function updateTime() {
       const now = new Date();
-      const pst = now.toLocaleTimeString('en-US', { timeZone: 'America/Los_Angeles' });
-      const cst = now.toLocaleTimeString('en-US', { timeZone: 'America/Chicago' });
-      const est = now.toLocaleTimeString('en-US', { timeZone: 'America/New_York' });
-      document.getElementById('pst-time').innerText = pst;
-      document.getElementById('cst-time').innerText = cst;
-      document.getElementById('est-time').innerText = est;
+
+      const pstTime = now.toLocaleTimeString('en-US', { timeZone: 'America/Los_Angeles', hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      const pstDate = now.toLocaleDateString('en-US', { timeZone: 'America/Los_Angeles' });
+
+      const cstTime = now.toLocaleTimeString('en-US', { timeZone: 'America/Chicago', hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      const cstDate = now.toLocaleDateString('en-US', { timeZone: 'America/Chicago' });
+
+      const estTime = now.toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      const estDate = now.toLocaleDateString('en-US', { timeZone: 'America/New_York' });
+
+      document.getElementById('pst-time').innerHTML = `<strong style="color:#007bff">${pstTime}</strong><br><span style="font-size:12px;">${pstDate}</span>`;
+      document.getElementById('cst-time').innerHTML = `<strong style="color:#007bff">${cstTime}</strong><br><span style="font-size:12px;">${cstDate}</span>`;
+      document.getElementById('est-time').innerHTML = `<strong style="color:#007bff">${estTime}</strong><br><span style="font-size:12px;">${estDate}</span>`;
     }
     setInterval(updateTime, 1000);
     updateTime();
