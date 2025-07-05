@@ -5,11 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pavan Kumar Aravapalli - DevOps Engineer</title>
 
-  <link rel="stylesheet" href="styles.css" />
+  <!-- Google Fonts & FontAwesome & AOS CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
   <style>
     body {
@@ -81,11 +80,14 @@
       -webkit-backdrop-filter: blur(15px);
       border: 2px solid rgba(0, 123, 255, 0.4);
       box-shadow: 0 20px 30px rgba(0, 123, 255, 0.2);
+      flex-wrap: wrap;
+      gap: 30px;
     }
 
     .intro-left {
       text-align: center;
       max-width: 600px;
+      flex: 1 1 400px;
     }
 
     .intro-left img {
@@ -179,6 +181,8 @@
       flex-direction: column;
       gap: 16px;
       margin-left: 40px;
+      flex: 1 1 150px;
+      min-width: 120px;
     }
 
     .timezone {
@@ -223,6 +227,7 @@
 
     .about-text {
       flex: 1 1 55%;
+      min-width: 280px;
     }
 
     .about-text h2 {
@@ -244,6 +249,7 @@
       flex-direction: column;
       gap: 20px;
       flex: 1 1 35%;
+      min-width: 200px;
     }
 
     .stat-box {
@@ -362,6 +368,8 @@
       color: #007bff;
       font-weight: bold;
       background: #fff;
+      padding: 2px 6px;
+      border-radius: 6px;
     }
 
     .timeline-content {
@@ -447,6 +455,43 @@
       color: #666;
       margin: 0;
     }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .intro-box {
+        flex-direction: column;
+        padding: 30px 20px;
+      }
+
+      .timezone-box {
+        margin-left: 0;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+        flex-wrap: wrap;
+      }
+
+      .about-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .about-text, .about-stats {
+        flex: 1 1 100%;
+        max-width: 600px;
+      }
+
+      nav ul {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      header {
+        padding: 20px;
+      }
+    }
   </style>
 </head>
 
@@ -477,12 +522,12 @@
           <a href="#experience"><i class="fas fa-briefcase"></i> View My Work</a>
         </div>
         <div class="social-icons">
-          <a href="https://www.linkedin.com/in/apavankumar7" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://github.com/PavanKumarap5" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="mailto:pavankumar23051@gmail.com"><i class="fas fa-envelope"></i></a>
+          <a href="https://www.linkedin.com/in/apavankumar7" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/PavanKumarap5" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="mailto:pavankumar23051@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
         </div>
       </div>
-      <div class="timezone-box">
+      <div class="timezone-box" aria-label="Timezone Clocks">
         <div class="timezone"><h4>PST</h4><p id="pst-time"></p></div>
         <div class="timezone"><h4>CST</h4><p id="cst-time"></p></div>
         <div class="timezone"><h4>EST</h4><p id="est-time"></p></div>
@@ -519,56 +564,57 @@
   <!-- Skills Section -->
   <section id="skills" class="skills-section" data-aos="fade-up">
     <h2>Skills</h2>
-    <div class="skills-tags">
-      <span>AWS</span>
-      <span>Azure</span>
-      <span>Terraform</span>
-      <span>Kubernetes</span>
-      <span>Docker</span>
-      <span>Prometheus</span>
-      <span>Grafana</span>
-      <span>Jenkins</span>
-      <span>GitHub Actions</span>
-      <span>Ansible</span>
-      <span>Python</span>
-      <span>Bash</span>
-      <span>Helm</span>
-      <span>ArgoCD</span>
-      <span>CloudWatch</span>
+    <div class="skills-tags" role="list">
+      <span role="listitem">AWS</span>
+      <span role="listitem">Azure</span>
+      <span role="listitem">Terraform</span>
+      <span role="listitem">Kubernetes</span>
+      <span role="listitem">Docker</span>
+      <span role="listitem">Prometheus</span>
+      <span role="listitem">Grafana</span>
+      <span role="listitem">Jenkins</span>
+      <span role="listitem">GitHub Actions</span>
+      <span role="listitem">Ansible</span>
+      <span role="listitem">Python</span>
+      <span role="listitem">Bash</span>
     </div>
   </section>
 
   <!-- Experience Section -->
   <section id="experience" class="experience-section" data-aos="fade-up">
     <h2>Experience</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-date">Apr 2021 - Present</div>
+    <div class="timeline" role="list">
+
+      <div class="timeline-item" role="listitem">
+        <div class="timeline-date">2022 - Present</div>
         <div class="timeline-content">
           <h3>Senior DevOps Engineer</h3>
           <div class="role">Liberty Mutual Finance</div>
           <ul>
-            <li>Designed and implemented scalable AWS infrastructure using Terraform and CloudFormation.</li>
-            <li>Automated CI/CD pipelines with Jenkins and GitHub Actions.</li>
-            <li>Managed Kubernetes clusters and implemented Helm charts for deployment.</li>
-            <li>Monitored system health with Prometheus, Grafana, and AWS CloudWatch.</li>
+            <li>Designed and implemented AWS infrastructure using Terraform.</li>
+            <li>Built CI/CD pipelines with Jenkins and GitHub Actions.</li>
+            <li>Automated configuration management using Ansible.</li>
+            <li>Implemented monitoring and alerting with Prometheus and Grafana.</li>
           </ul>
         </div>
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-date">Jan 2019 - Mar 2021</div>
+      <div class="timeline-item" role="listitem">
+        <div class="timeline-date">2019 - 2022</div>
         <div class="timeline-content">
           <h3>DevOps Engineer</h3>
           <div class="role">Verizon Wireless Systems</div>
           <ul>
-            <li>Built automation scripts using Python and Bash for infrastructure provisioning.</li>
-            <li>Implemented Docker containerization and orchestration with Kubernetes.</li>
-            <li>Configured monitoring solutions including ELK and Splunk.</li>
-            <li>Collaborated across teams to streamline deployment processes.</li>
+            <li>Managed Kubernetes clusters with Rancher and Helm.</li>
+            <li>Implemented containerization strategies using Docker.</li>
+            <li>Developed automation scripts in Python and Bash.</li>
+            <li>Collaborated with development teams for agile deployments.</li>
           </ul>
         </div>
       </div>
+
+      <!-- Add more experiences if needed -->
+
     </div>
   </section>
 
@@ -577,75 +623,71 @@
     <h2>Certifications</h2>
     <div class="certifications-grid">
       <div class="cert-card">
-        <h3>AWS Certified Solutions Architect – Associate</h3>
-        <p>Issued: 2023</p>
+        <h3>AWS Certified Solutions Architect</h3>
+        <p>Amazon Web Services (AWS)</p>
       </div>
       <div class="cert-card">
         <h3>Certified Kubernetes Administrator (CKA)</h3>
-        <p>Issued: 2022</p>
+        <p>Cloud Native Computing Foundation</p>
       </div>
       <div class="cert-card">
         <h3>Terraform Associate</h3>
-        <p>Issued: 2023</p>
-      </div>
-      <div class="cert-card">
-        <h3>Microsoft Azure Fundamentals</h3>
-        <p>Issued: 2021</p>
-      </div>
-      <div class="cert-card">
-        <h3>Docker Certified Associate</h3>
-        <p>Issued: 2022</p>
+        <p>HashiCorp</p>
       </div>
     </div>
   </section>
 
+  <!-- Footer Contact -->
+  <footer id="contact" style="background:#007bff; color:#fff; padding:40px 20px; text-align:center;">
+    <h2>Get In Touch</h2>
+    <p>Email: pavankumar23051@gmail.com</p>
+    <p>Phone: +1-123-456-7890</p>
+  </footer>
+
+  <!-- Timezone Script -->
   <script>
-    // Timezone with date and black time
     function updateTime() {
       const now = new Date();
 
-      const pstTime = now.toLocaleTimeString('en-US', {
-        timeZone: 'America/Los_Angeles',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit'
-      });
-      const pstDate = now.toLocaleDateString('en-US', {
-        timeZone: 'America/Los_Angeles'
-      });
+      function getTimeAndDate(tz) {
+        return {
+          time: now.toLocaleTimeString('en-US', {
+            timeZone: tz,
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+          }),
+          date: now.toLocaleDateString('en-US', {
+            timeZone: tz,
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit'
+          })
+        };
+      }
 
-      const cstTime = now.toLocaleTimeString('en-US', {
-        timeZone: 'America/Chicago',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit'
-      });
-      const cstDate = now.toLocaleDateString('en-US', {
-        timeZone: 'America/Chicago'
-      });
-
-      const estTime = now.toLocaleTimeString('en-US', {
-        timeZone: 'America/New_York',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit'
-      });
-      const estDate = now.toLocaleDateString('en-US', {
-        timeZone: 'America/New_York'
-      });
+      const pst = getTimeAndDate('America/Los_Angeles');
+      const cst = getTimeAndDate('America/Chicago');
+      const est = getTimeAndDate('America/New_York');
 
       document.getElementById('pst-time').innerHTML =
-        `<strong style="color:#000">${pstTime}</strong><br><span style="font-size:12px;">${pstDate}</span>`;
+        `<strong style="color:#000">${pst.time}</strong><br><span style="font-size:12px;">${pst.date}</span>`;
       document.getElementById('cst-time').innerHTML =
-        `<strong style="color:#000">${cstTime}</strong><br><span style="font-size:12px;">${cstDate}</span>`;
+        `<strong style="color:#000">${cst.time}</strong><br><span style="font-size:12px;">${cst.date}</span>`;
       document.getElementById('est-time').innerHTML =
-        `<strong style="color:#000">${estTime}</strong><br><span style="font-size:12px;">${estDate}</span>`;
+        `<strong style="color:#000">${est.time}</strong><br><span style="font-size:12px;">${est.date}</span>`;
     }
 
     setInterval(updateTime, 1000);
     updateTime();
-
-    AOS.init();
   </script>
+
+  <!-- AOS Animation Library -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true });
+  </script>
+
 </body>
 </html>
