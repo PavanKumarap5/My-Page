@@ -13,7 +13,7 @@ header {
   align-items: center;
   padding: 20px 40px;
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
   z-index: 999;
@@ -43,11 +43,13 @@ nav a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
-nav a:hover {
+nav a:hover,
+nav a:focus {
   color: #007bff;
+  outline: none;
 }
 
 /* Canvas for animated background */
@@ -77,17 +79,20 @@ nav a:hover {
   max-width: 1000px;
   padding: 40px;
   border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.25); /* More translucent */
+  background-color: rgba(255, 255, 255, 0.25); /* translucent */
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 2px solid rgba(0, 123, 255, 0.3);
   box-shadow: 0 15px 35px rgba(0, 123, 255, 0.15);
   color: #000; /* Text color black for contrast */
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .intro-left {
   text-align: center;
   max-width: 600px;
+  flex: 1 1 300px;
 }
 
 .intro-left img {
@@ -96,7 +101,7 @@ nav a:hover {
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid white;
-  box-shadow: 0 0 0 4px rgba(0,123,255,0.3);
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.3);
 }
 
 .intro-left h1 {
@@ -131,7 +136,7 @@ nav a:hover {
   margin: 0 10px;
   font-size: 14px;
   text-decoration: none;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
 }
 
 .buttons a:first-child {
@@ -139,8 +144,10 @@ nav a:hover {
   color: white;
 }
 
-.buttons a:first-child:hover {
+.buttons a:first-child:hover,
+.buttons a:first-child:focus {
   background-color: #0056b3;
+  outline: none;
 }
 
 .buttons a:last-child {
@@ -149,9 +156,11 @@ nav a:hover {
   border: 2px solid #007bff;
 }
 
-.buttons a:last-child:hover {
+.buttons a:last-child:hover,
+.buttons a:last-child:focus {
   background-color: #007bff;
   color: white;
+  outline: none;
 }
 
 .social-icons {
@@ -170,11 +179,13 @@ nav a:hover {
   color: white;
   border-radius: 50%;
   text-decoration: none;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
 }
 
-.social-icons a:hover {
+.social-icons a:hover,
+.social-icons a:focus {
   transform: scale(1.2);
+  outline: none;
 }
 
 /* Timezone Box */
@@ -183,12 +194,13 @@ nav a:hover {
   flex-direction: column;
   gap: 16px;
   margin-left: 40px;
+  flex-wrap: wrap;
 }
 
 .timezone {
   background: linear-gradient(145deg, #f4f6ff, #ffffff);
   border: 1px solid #e0e7ff;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   padding: 16px;
   border-radius: 12px;
   text-align: center;
@@ -227,6 +239,7 @@ nav a:hover {
 
 .about-text {
   flex: 1 1 55%;
+  min-width: 280px;
 }
 
 .about-text h2 {
@@ -248,6 +261,7 @@ nav a:hover {
   flex-direction: column;
   gap: 20px;
   flex: 1 1 35%;
+  min-width: 280px;
 }
 
 .stat-box {
@@ -255,7 +269,7 @@ nav a:hover {
   padding: 20px;
   text-align: center;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .stat-box h3 {
@@ -303,9 +317,11 @@ nav a:hover {
   user-select: none;
 }
 
-.skills-tags span:hover {
+.skills-tags span:hover,
+.skills-tags span:focus {
   transform: scale(1.05);
   background-color: #f0f8ff;
+  outline: none;
 }
 
 /* Experience Section */
@@ -338,7 +354,8 @@ nav a:hover {
   cursor: default;
 }
 
-.timeline-item:hover {
+.timeline-item:hover,
+.timeline-item:focus-within {
   transform: scale(1.02);
   box-shadow: 0 8px 24px rgba(0, 123, 255, 0.1);
   background: #ffffff;
@@ -435,9 +452,11 @@ nav a:hover {
   user-select: none;
 }
 
-.cert-card:hover {
+.cert-card:hover,
+.cert-card:focus {
   transform: translateY(-8px);
   box-shadow: 0 12px 30px rgba(0, 123, 255, 0.2);
+  outline: none;
 }
 
 .cert-card h3 {
@@ -450,4 +469,43 @@ nav a:hover {
   font-size: 14px;
   color: #666;
   margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .intro-box {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .timezone-box {
+    margin-left: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .about-grid {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .about-text,
+  .about-stats {
+    flex: 1 1 100%;
+  }
+
+  .timeline {
+    padding-left: 20px;
+    border-left-width: 2px;
+  }
+
+  .timeline-date {
+    left: -90px;
+  }
+
+  .certifications-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
