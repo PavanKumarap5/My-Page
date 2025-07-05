@@ -47,6 +47,7 @@ nav a:hover {
   color: #007bff;
 }
 
+/* Intro Section */
 .intro {
   display: flex;
   justify-content: center;
@@ -61,11 +62,11 @@ nav a:hover {
   max-width: 1000px;
   padding: 40px;
   border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 2px solid rgba(0, 123, 255, 0.25);
-  box-shadow: 0 12px 25px rgba(0, 123, 255, 0.12);
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 2px solid rgba(0, 123, 255, 0.4);
+  box-shadow: 0 20px 30px rgba(0, 123, 255, 0.2);
 }
 
 .intro-left {
@@ -78,6 +79,8 @@ nav a:hover {
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
+  border: 3px solid white;
+  box-shadow: 0 0 0 4px rgba(0,123,255,0.3);
 }
 
 .intro-left h1 {
@@ -153,10 +156,6 @@ nav a:hover {
   transition: transform 0.3s;
 }
 
-.social-icons a i {
-  color: white;
-}
-
 .social-icons a:hover {
   transform: scale(1.2);
 }
@@ -169,12 +168,13 @@ nav a:hover {
 }
 
 .timezone {
-  background: #f4f6ff;
+  background: linear-gradient(145deg, #f4f6ff, #ffffff);
+  border: 1px solid #e0e7ff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   padding: 16px;
-  border-radius: 8px;
+  border-radius: 12px;
   text-align: center;
   min-width: 100px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 .timezone h4 {
@@ -190,7 +190,7 @@ nav a:hover {
   color: #000;
 }
 
-/* ✅ About Me Section */
+/* About Section */
 .about-section {
   padding: 60px 20px;
   background-color: #ffffff;
@@ -252,7 +252,7 @@ nav a:hover {
   margin: 0;
 }
 
-/* ✅ Skills Section */
+/* Skills Section */
 .skills-section {
   padding: 60px 20px;
   background-color: #fff;
@@ -281,6 +281,8 @@ nav a:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   color: #333;
   transition: transform 0.2s ease;
+  cursor: default;
+  user-select: none;
 }
 
 .skills-tags span:hover {
@@ -288,7 +290,7 @@ nav a:hover {
   background-color: #f0f8ff;
 }
 
-/* ✅ Experience Section with Timeline */
+/* Experience Section */
 .experience-section {
   padding: 80px 20px;
   background-color: #fff;
@@ -315,6 +317,7 @@ nav a:hover {
   margin-bottom: 60px;
   padding-left: 40px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
 }
 
 .timeline-item:hover {
@@ -377,4 +380,56 @@ nav a:hover {
   color: #444;
   line-height: 1.7;
   margin-bottom: 10px;
+}
+
+/* Certifications Section */
+.certifications-section {
+  padding: 60px 20px;
+  background-color: #f9fbff;
+  text-align: center;
+  border-top: 1px solid #eee;
+}
+
+.certifications-section h2 {
+  font-size: 28px;
+  color: #007bff;
+  margin-bottom: 40px;
+}
+
+.certifications-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.cert-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px 30px;
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.1);
+  flex: 1 1 280px;
+  max-width: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+  user-select: none;
+}
+
+.cert-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 123, 255, 0.2);
+}
+
+.cert-card h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.cert-card p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
 }
