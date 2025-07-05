@@ -496,4 +496,155 @@
         <h2>About Me</h2>
         <p>I'm a passionate DevOps Engineer with over 4 years of experience in automating cloud infrastructure, CI/CD pipelines, and modernizing application deployments.</p>
         <p>I specialize in AWS, Azure, Kubernetes, and Terraform, helping teams build scalable and resilient systems. I’ve designed secure cloud infrastructure, automated provisioning with Terraform, and improved system reliability with tools like Prometheus, ArgoCD, and AWS CloudWatch.</p>
-        <p>I love collaborating with developers,
+        <p>I love collaborating with developers, cloud engineers, and QA to deliver high-quality software faster and more reliably.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-box">
+          <h3>4+</h3>
+          <p>Years Experience</p>
+        </div>
+        <div class="stat-box">
+          <h3>10+</h3>
+          <p>Tools Explored</p>
+        </div>
+        <div class="stat-box">
+          <h3>5</h3>
+          <p>Certifications</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills-section" data-aos="fade-up">
+    <h2>Skills</h2>
+    <div class="skills-tags">
+      <span>AWS</span>
+      <span>Azure</span>
+      <span>Terraform</span>
+      <span>Kubernetes</span>
+      <span>Docker</span>
+      <span>Prometheus</span>
+      <span>Grafana</span>
+      <span>Jenkins</span>
+      <span>GitHub Actions</span>
+      <span>Ansible</span>
+      <span>Python</span>
+      <span>Bash</span>
+      <span>Helm</span>
+      <span>ArgoCD</span>
+      <span>CloudWatch</span>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="experience-section" data-aos="fade-up">
+    <h2>Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">Apr 2021 - Present</div>
+        <div class="timeline-content">
+          <h3>Senior DevOps Engineer</h3>
+          <div class="role">Liberty Mutual Finance</div>
+          <ul>
+            <li>Designed and implemented scalable AWS infrastructure using Terraform and CloudFormation.</li>
+            <li>Automated CI/CD pipelines with Jenkins and GitHub Actions.</li>
+            <li>Managed Kubernetes clusters and implemented Helm charts for deployment.</li>
+            <li>Monitored system health with Prometheus, Grafana, and AWS CloudWatch.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Jan 2019 - Mar 2021</div>
+        <div class="timeline-content">
+          <h3>DevOps Engineer</h3>
+          <div class="role">Verizon Wireless Systems</div>
+          <ul>
+            <li>Built automation scripts using Python and Bash for infrastructure provisioning.</li>
+            <li>Implemented Docker containerization and orchestration with Kubernetes.</li>
+            <li>Configured monitoring solutions including ELK and Splunk.</li>
+            <li>Collaborated across teams to streamline deployment processes.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications" class="certifications-section" data-aos="fade-up">
+    <h2>Certifications</h2>
+    <div class="certifications-grid">
+      <div class="cert-card">
+        <h3>AWS Certified Solutions Architect – Associate</h3>
+        <p>Issued: 2023</p>
+      </div>
+      <div class="cert-card">
+        <h3>Certified Kubernetes Administrator (CKA)</h3>
+        <p>Issued: 2022</p>
+      </div>
+      <div class="cert-card">
+        <h3>Terraform Associate</h3>
+        <p>Issued: 2023</p>
+      </div>
+      <div class="cert-card">
+        <h3>Microsoft Azure Fundamentals</h3>
+        <p>Issued: 2021</p>
+      </div>
+      <div class="cert-card">
+        <h3>Docker Certified Associate</h3>
+        <p>Issued: 2022</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Timezone with date and black time
+    function updateTime() {
+      const now = new Date();
+
+      const pstTime = now.toLocaleTimeString('en-US', {
+        timeZone: 'America/Los_Angeles',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      });
+      const pstDate = now.toLocaleDateString('en-US', {
+        timeZone: 'America/Los_Angeles'
+      });
+
+      const cstTime = now.toLocaleTimeString('en-US', {
+        timeZone: 'America/Chicago',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      });
+      const cstDate = now.toLocaleDateString('en-US', {
+        timeZone: 'America/Chicago'
+      });
+
+      const estTime = now.toLocaleTimeString('en-US', {
+        timeZone: 'America/New_York',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      });
+      const estDate = now.toLocaleDateString('en-US', {
+        timeZone: 'America/New_York'
+      });
+
+      document.getElementById('pst-time').innerHTML =
+        `<strong style="color:#000">${pstTime}</strong><br><span style="font-size:12px;">${pstDate}</span>`;
+      document.getElementById('cst-time').innerHTML =
+        `<strong style="color:#000">${cstTime}</strong><br><span style="font-size:12px;">${cstDate}</span>`;
+      document.getElementById('est-time').innerHTML =
+        `<strong style="color:#000">${estTime}</strong><br><span style="font-size:12px;">${estDate}</span>`;
+    }
+
+    setInterval(updateTime, 1000);
+    updateTime();
+
+    AOS.init();
+  </script>
+</body>
+</html>
