@@ -456,7 +456,105 @@
       margin: 0;
     }
 
-    /* Responsive adjustments */
+    /* Get In Touch Section */
+    #contact {
+      background-color: #007bff;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    #contact h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    #contact p {
+      font-size: 18px;
+      margin: 8px 0;
+    }
+
+    .contact-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .contact-info, .contact-form {
+      flex: 1 1 350px;
+      background: #0056bba6;
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      color: white;
+    }
+
+    .contact-info h3 {
+      margin-bottom: 20px;
+      font-weight: 600;
+      font-size: 22px;
+      color: #d0e8ff;
+    }
+
+    .contact-info p {
+      margin: 12px 0;
+      font-size: 16px;
+    }
+
+    .contact-form h3 {
+      margin-bottom: 20px;
+      font-weight: 600;
+      font-size: 22px;
+      color: #d0e8ff;
+    }
+
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-form label {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      text-align: left;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px 14px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+      resize: vertical;
+    }
+
+    .contact-form textarea {
+      min-height: 100px;
+    }
+
+    .contact-form button {
+      background-color: #0056b3;
+      color: white;
+      padding: 14px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-weight: 600;
+    }
+
+    .contact-form button:hover {
+      background-color: #003d80;
+    }
+
+    /* Responsive */
     @media (max-width: 768px) {
       .intro-box {
         flex-direction: column;
@@ -491,6 +589,10 @@
       header {
         padding: 20px;
       }
+
+      .contact-container {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
@@ -505,6 +607,7 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Get In Touch</a></li>
       </ul>
     </nav>
   </header>
@@ -613,8 +716,6 @@
         </div>
       </div>
 
-      <!-- Add more experiences if needed -->
-
     </div>
   </section>
 
@@ -637,12 +738,33 @@
     </div>
   </section>
 
-  <!-- Footer Contact -->
-  <footer id="contact" style="background:#007bff; color:#fff; padding:40px 20px; text-align:center;">
+  <!-- Get In Touch Section -->
+  <section id="contact" data-aos="fade-up">
     <h2>Get In Touch</h2>
-    <p>Email: pavankumar23051@gmail.com</p>
-    <p>Phone: +1-123-456-7890</p>
-  </footer>
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Contact Info</h3>
+        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:pavankumar23051@gmail.com" style="color:#d0e8ff; text-decoration:none;">pavankumar23051@gmail.com</a></p>
+        <p><i class="fas fa-phone"></i> Phone: <a href="tel:+11234567890" style="color:#d0e8ff; text-decoration:none;">+1-123-456-7890</a></p>
+        <p><i class="fas fa-map-marker-alt"></i> Location: Cincinnati, Ohio, USA</p>
+      </div>
+      <div class="contact-form">
+        <h3>Send a Message</h3>
+        <form action="mailto:pavankumar23051@gmail.com" method="POST" enctype="text/plain" >
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+          
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+          
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+          
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
 
   <!-- Timezone Script -->
   <script>
@@ -688,6 +810,5 @@
   <script>
     AOS.init({ once: true });
   </script>
-
 </body>
 </html>
