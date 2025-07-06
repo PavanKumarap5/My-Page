@@ -129,9 +129,10 @@ nav a:hover {
   max-width: 1000px;
   padding: 40px;
   border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05); /* translucent */
+  backdrop-filter: blur(20px); /* frosted glass */
+  -webkit-backdrop-filter: blur(20px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* subtle border */
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
   color: #fff;
   flex-wrap: wrap;
