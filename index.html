@@ -229,6 +229,152 @@
       </ul>
     </nav>
   </header>
+    <!-- About Section -->
+  <section id="about" style="padding: 60px 20px; background: #fff; color: #000;">
+    <div style="max-width: 1000px; margin: auto;">
+      <h2 style="color: #007bff;">About Me</h2>
+      <p>I'm a passionate DevOps Engineer with over 4 years of experience in automating cloud infrastructure, CI/CD pipelines, and modernizing application deployments.</p>
+      <p>I specialize in AWS, Azure, Kubernetes, and Terraform, helping teams build scalable and resilient systems. I’ve designed secure cloud infrastructure, automated provisioning with Terraform, and improved system reliability with tools like Prometheus, ArgoCD, and AWS CloudWatch.</p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" style="padding: 60px 20px; background: #f4f6ff; text-align: center;">
+    <h2 style="color: #007bff;">Skills</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 900px; margin: auto;">
+      <span style="padding:10px 16px; background:white; border-radius:20px;">AWS</span>
+      <span style="padding:10px 16px; background:white; border-radius:20px;">Azure</span>
+      <span style="padding:10px 16px; background:white; border-radius:20px;">Terraform</span>
+      <span style="padding:10px 16px; background:white; border-radius:20px;">Kubernetes</span>
+      <span style="padding:10px 16px; background:white; border-radius:20px;">Docker</span>
+      <span style="padding:10px 16px; background:white; border-radius:20px;">Jenkins</span>
+      <span style="padding:10px 16px; background:white; border-radius:20px;">GitHub Actions</span>
+      <span style="padding:10px 16px; background:white; border-radius:20px;">Prometheus</span>
+      <span style="padding:10px 16px; background:white; border-radius:20px;">Ansible</span>
+      <span style="padding:10px 16px; background:white; border-radius:20px;">Python</span>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" style="padding: 60px 20px; background: #fff;">
+    <div style="max-width: 1000px; margin: auto;">
+      <h2 style="color: #007bff;">Experience</h2>
+
+      <div style="margin-bottom: 30px;">
+        <h3>Senior DevOps Engineer – Liberty Mutual Finance</h3>
+        <small>2022 – Present</small>
+        <ul>
+          <li>Designed AWS infrastructure using Terraform</li>
+          <li>CI/CD pipelines with Jenkins and GitHub Actions</li>
+          <li>Implemented monitoring using Prometheus and Grafana</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>DevOps Engineer – Verizon Wireless Systems</h3>
+        <small>2019 – 2022</small>
+        <ul>
+          <li>Managed Kubernetes clusters using Rancher</li>
+          <li>Automated deployments using Ansible</li>
+          <li>Developed scripts in Python & Bash</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications" style="padding: 60px 20px; background: #f4f6ff; text-align: center;">
+    <h2 style="color: #007bff;">Certifications</h2>
+    <div style="max-width: 900px; margin: auto; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+      <div style="background:white; padding: 20px; border-radius: 12px; width: 280px;">
+        <h3>AWS Solutions Architect</h3>
+        <p>Amazon Web Services</p>
+      </div>
+      <div style="background:white; padding: 20px; border-radius: 12px; width: 280px;">
+        <h3>Certified Kubernetes Administrator</h3>
+        <p>Cloud Native Foundation</p>
+      </div>
+      <div style="background:white; padding: 20px; border-radius: 12px; width: 280px;">
+        <h3>Terraform Associate</h3>
+        <p>HashiCorp</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" style="padding: 60px 20px; background: #007bff; color: white; text-align: center;">
+    <h2>Get In Touch</h2>
+    <p><strong>Email:</strong> <a href="mailto:pavankumar23051@gmail.com" style="color:#fff;">pavankumar23051@gmail.com</a></p>
+    <p><strong>Phone:</strong> <a href="tel:+15135702537" style="color:#fff;">+1 513-570-2537</a></p>
+    <p><strong>Location:</strong> Plano, TX</p>
+  </section>
+
+  <!-- Scripts -->
+  <script>
+    // Hamburger toggle
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('nav-menu').classList.toggle('show');
+    });
+
+    // Timezone clocks
+    function updateTime() {
+      const now = new Date();
+      function formatTZ(tz) {
+        return {
+          time: now.toLocaleTimeString('en-US', { timeZone: tz, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false }),
+          date: now.toLocaleDateString('en-US', { timeZone: tz })
+        };
+      }
+      const zones = {
+        pst: formatTZ('America/Los_Angeles'),
+        cst: formatTZ('America/Chicago'),
+        est: formatTZ('America/New_York')
+      };
+      document.getElementById('pst-time').innerHTML = `<strong>${zones.pst.time}</strong><br><span>${zones.pst.date}</span>`;
+      document.getElementById('cst-time').innerHTML = `<strong>${zones.cst.time}</strong><br><span>${zones.cst.date}</span>`;
+      document.getElementById('est-time').innerHTML = `<strong>${zones.est.time}</strong><br><span>${zones.est.date}</span>`;
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+
+    // Particle Background
+    tsParticles.load("tsparticles", {
+      fullScreen: { enable: false },
+      background: { color: { value: "transparent" } },
+      fpsLimit: 60,
+      interactivity: {
+        events: { onHover: { enable: true, mode: "grab" } },
+        modes: { grab: { distance: 140, links: { opacity: 0.5 } } }
+      },
+      particles: {
+        color: { value: "#9fcbff" },
+        links: {
+          color: "#9fcbff",
+          distance: 150,
+          enable: true,
+          opacity: 0.2,
+          width: 1
+        },
+        move: {
+          direction: "none",
+          enable: true,
+          outModes: "bounce",
+          speed: 1
+        },
+        number: { value: 100, density: { enable: true, area: 800 } },
+        opacity: { value: 0.4 },
+        shape: { type: "circle" },
+        size: { value: { min: 1, max: 3 } }
+      },
+      detectRetina: true
+    });
+
+    // AOS Init
+    AOS.init({ once: true });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+</body>
+</html>
 
   <!-- Intro Section -->
   <section class="intro">
