@@ -441,7 +441,7 @@ nav a:hover {
 }
 
 .certifications-section {
-  padding: 60px 20px;
+  padding: 80px 20px;
   background-color: #f9fbff;
   text-align: center;
   border-top: 1px solid #eee;
@@ -451,6 +451,17 @@ nav a:hover {
   font-size: 26px;
   color: var(--primary-blue);
   margin-bottom: 40px;
+  position: relative;
+}
+
+.certifications-section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #007bff;
+  margin: 10px auto 0;
+  border-radius: 4px;
 }
 
 .certifications-grid {
@@ -467,6 +478,7 @@ nav a:hover {
   box-shadow: 0 6px 20px rgba(0, 123, 255, 0.08);
   transition: 0.3s;
   max-width: 260px;
+  border-top: 4px solid #007bff;
 }
 
 .cert-card:hover {
@@ -474,44 +486,42 @@ nav a:hover {
   box-shadow: 0 12px 28px rgba(0, 123, 255, 0.18);
 }
 
+.cert-card img {
+  height: 60px;
+  margin-bottom: 15px;
+}
+
 .cert-card h3 {
   font-size: 16px;
   color: #333;
+  margin: 10px 0;
+  height: 60px;
 }
 
 .cert-card p {
-  font-size: 13px;
-  color: #666;
+  font-size: 14px;
+  color: #777;
+  margin: 0;
 }
 
-@media (max-width: 768px) {
-  .intro-box {
-    flex-direction: column;
-    padding: 30px 20px;
-  }
+.cert-card a {
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 12px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  color: white;
+  font-weight: bold;
+  background-color: #007bff;
+  transition: background 0.3s ease;
+}
 
-  .timezone-box {
-    margin-left: 0;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+.cert-card a:hover {
+  background-color: #0056b3;
+}
 
-  .about-grid {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .timeline {
-    padding-left: 20px;
-    border-left-width: 2px;
-  }
-
-  .timeline-date {
-    left: -90px;
-  }
-
-  .certifications-grid {
-    flex-direction: column;
-  }
+.cert-card a i {
+  margin-right: 6px;
+}
 }
