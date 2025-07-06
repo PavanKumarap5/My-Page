@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Create and style the canvas for the animated background
+  document.getElementById('hamburger').addEventListener('click', () => {
+  document.querySelector('nav ul').classList.toggle('active');
+});
   const canvas = document.createElement('canvas');
   canvas.id = 'network-canvas';
   canvas.style.position = 'fixed';
