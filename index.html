@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pavan Kumar Aravapalli - DevOps Engineer</title>
 
+  <!-- Google Fonts, FontAwesome, AOS, tsParticles -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
 
   <style>
     body {
@@ -16,6 +18,15 @@
       margin: 0;
       background-color: #f9f9fb;
       color: #333;
+    }
+
+    #tsparticles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
     }
 
     header {
@@ -28,12 +39,19 @@
       position: sticky;
       top: 0;
       z-index: 999;
+      flex-wrap: wrap;
+    }
+
+    header h2 {
+      margin: 0;
+      white-space: nowrap;
+      font-size: 22px;
     }
 
     nav ul {
-      display: flex;
       list-style: none;
-      gap: 20px;
+      display: flex;
+      gap: 30px;
       margin: 0;
       padding: 0;
     }
@@ -42,512 +60,136 @@
       text-decoration: none;
       color: #333;
       font-weight: 500;
+      transition: color 0.3s;
     }
 
-    .intro {
-      display: flex;
-      justify-content: center;
-      margin-top: 40px;
-    }
-
-    .intro-box {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 90%;
-      max-width: 1000px;
-      padding: 40px;
-      border-radius: 20px;
-      background-color: rgba(255, 255, 255, 0.75);
-      backdrop-filter: blur(10px);
-      border: 2px solid rgba(0, 123, 255, 0.25);
-      box-shadow: 0 12px 25px rgba(0, 123, 255, 0.12);
-    }
-
-    .intro-left {
-      text-align: center;
-      max-width: 600px;
-    }
-
-    .intro-left img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .intro-left h1 {
-      margin-top: 16px;
-      font-size: 28px;
-    }
-
-    .intro-left .title {
+    nav a:hover {
       color: #007bff;
-      margin-top: 8px;
-      font-size: 18px;
     }
 
-    .intro-left p {
-      margin-top: 12px;
-      font-size: 16px;
-      color: #555;
-      max-width: 400px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .buttons {
-      margin-top: 20px;
-    }
-
-    .buttons a {
-      display: inline-block;
-      padding: 10px 16px;
-      border-radius: 6px;
-      margin: 0 10px;
-      font-size: 14px;
-      text-decoration: none;
-      transition: all 0.3s;
-    }
-
-    .buttons a:first-child {
-      background-color: #007bff;
-      color: white;
-    }
-
-    .buttons a:first-child:hover {
-      background-color: #0056b3;
-    }
-
-    .buttons a:last-child {
-      background-color: white;
-      color: #007bff;
-      border: 2px solid #007bff;
-    }
-
-    .buttons a:last-child:hover {
-      background-color: #007bff;
-      color: white;
-    }
-
-    .social-icons {
-      margin-top: 20px;
-    }
-
-    .social-icons a {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      width: 36px;
-      height: 36px;
-      margin: 0 8px;
-      font-size: 16px;
-      background-color: #007bff;
-      color: white;
-      border-radius: 50%;
-      text-decoration: none;
-      transition: transform 0.3s;
-    }
-
-    .social-icons a:hover {
-      transform: scale(1.2);
-    }
-
-    .timezone-box {
-      display: flex;
+    /* Hamburger */
+    .hamburger {
+      display: none;
       flex-direction: column;
-      gap: 16px;
-      margin-left: 40px;
+      gap: 5px;
+      cursor: pointer;
     }
 
-    .timezone {
-      background: #f4f6ff;
-      padding: 16px;
-      border-radius: 8px;
-      text-align: center;
-      min-width: 100px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      transition: 0.3s;
     }
 
-    .timezone h4 {
-      font-weight: bold;
-      margin-bottom: 4px;
-      color: #007bff;
-      font-size: 16px;
-    }
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
 
-    .timezone p {
-      font-size: 14px;
-      margin: 4px 0 0;
-      color: #000;
-    }
+      nav ul {
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        display: none;
+        margin-top: 20px;
+        padding: 10px 0;
+      }
 
-    /* About Section */
-    .about-section {
-      padding: 60px 20px;
-      background-color: #fff;
-      border-top: 1px solid #eee;
-    }
+      nav ul.active {
+        display: flex;
+      }
 
-    .about-grid {
-      display: flex;
-      justify-content: space-between;
-      max-width: 1000px;
-      margin: 0 auto;
-      flex-wrap: wrap;
-      gap: 40px;
-    }
-
-    .about-text {
-      flex: 1 1 60%;
-    }
-
-    .about-text h2 {
-      font-size: 28px;
-      color: #007bff;
-      margin-bottom: 20px;
-    }
-
-    .about-text p {
-      font-size: 16px;
-      color: #444;
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-
-    .about-stats {
-      flex: 1 1 30%;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .stat-box {
-      background: #f4f6ff;
-      border-radius: 8px;
-      text-align: center;
-      padding: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    .stat-box h3 {
-      font-size: 24px;
-      color: #007bff;
-      margin: 0;
-    }
-
-    .stat-box p {
-      margin: 8px 0 0;
-      font-size: 14px;
-      color: #444;
-    }
-
-    /* Skills Section */
-    .skills-section {
-      padding: 60px 20px;
-      background-color: #ffffff;
-      border-top: 1px solid #eee;
-      text-align: center;
-    }
-
-    .skills-section h2 {
-      font-size: 28px;
-      color: #007bff;
-      margin-bottom: 30px;
-    }
-
-    .skills-tags {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-    }
-
-    .skills-tags span {
-      background: #fff;
-      border-radius: 999px;
-      padding: 10px 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      font-size: 14px;
-      font-weight: 500;
-      color: #333;
-      border: 1px solid #eee;
-      transition: transform 0.2s ease;
-    }
-
-    .skills-tags span:hover {
-      transform: scale(1.05);
-      background-color: #f0f8ff;
-    }
-
-    /* Experience Section */
-    .experience-section {
-      padding: 80px 20px;
-      background: #fff;
-      text-align: center;
-      border-top: 1px solid #eee;
-    }
-
-    .experience-section h2 {
-      font-size: 28px;
-      color: #007bff;
-      margin-bottom: 60px;
-    }
-
-    .timeline {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding-left: 40px;
-      border-left: 3px solid #007bff;
-      position: relative;
-    }
-
-    .timeline-item {
-      position: relative;
-      margin-bottom: 60px;
-      padding-left: 40px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .timeline-item:hover {
-      transform: scale(1.02);
-      box-shadow: 0 8px 24px rgba(0, 123, 255, 0.1);
-      background: #ffffff;
-      border-radius: 12px;
-    }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -22px;
-      top: 5px;
-      width: 12px;
-      height: 12px;
-      background-color: #007bff;
-      border-radius: 50%;
-      box-shadow: 0 0 0 3px #fff;
-      z-index: 1;
-    }
-
-    .timeline-date {
-      position: absolute;
-      left: -120px;
-      top: 0;
-      font-size: 14px;
-      color: #007bff;
-      font-weight: bold;
-      background: #fff;
-    }
-
-    .timeline-content {
-      background-color: #fff;
-      border-radius: 12px;
-      padding: 20px 25px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-      text-align: left;
-    }
-
-    .timeline-content h3 {
-      margin: 0;
-      font-size: 20px;
-      color: #333;
-    }
-
-    .timeline-content .role {
-      font-size: 15px;
-      color: #007bff;
-      margin: 8px 0 12px;
-    }
-
-    .timeline-content ul {
-      margin: 0;
-      padding-left: 20px;
-    }
-
-    .timeline-content ul li {
-      font-size: 14px;
-      color: #444;
-      line-height: 1.7;
-      margin-bottom: 10px;
+      nav ul li {
+        text-align: center;
+        margin: 10px 0;
+      }
     }
   </style>
 </head>
-
 <body>
+  <!-- Particle background -->
+  <div id="tsparticles"></div>
+
+  <!-- Header -->
   <header>
     <h2>Pavan Kumar Aravapalli</h2>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <nav>
-      <ul>
+      <ul id="nav-links">
         <li><a href="#">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Get In Touch</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Intro Section -->
-  <section class="intro">
-    <div class="intro-box">
-      <div class="intro-left">
-        <img src="profile.jpg" alt="Pavan Kumar Aravapalli" />
-        <h1>Pavan Kumar Aravapalli</h1>
-        <h2 class="title">Certified DevOps Engineer</h2>
-        <p>Experienced DevOps Engineer specializing in cloud infrastructure, automation, and CI/CD pipelines.</p>
-        <div class="buttons">
-          <a href="mailto:pavankumar23051@gmail.com"><i class="fas fa-envelope"></i> Contact Me</a>
-          <a href="#experience"><i class="fas fa-briefcase"></i> View My Work</a>
-        </div>
-        <div class="social-icons">
-          <a href="https://www.linkedin.com/in/apavankumar7" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://github.com/PavanKumarap5" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="mailto:pavankumar23051@gmail.com"><i class="fas fa-envelope"></i></a>
-        </div>
-      </div>
-      <div class="timezone-box">
-        <div class="timezone"><h4>PST</h4><p id="pst-time"></p></div>
-        <div class="timezone"><h4>CST</h4><p id="cst-time"></p></div>
-        <div class="timezone"><h4>EST</h4><p id="est-time"></p></div>
-      </div>
-    </div>
-  </section>
+  <!-- Your content sections like intro, about, skills, experience, etc. should go below -->
 
-  <!-- About Section -->
-  <section id="about" class="about-section">
-    <div class="about-grid">
-      <div class="about-text">
-        <h2>About Me</h2>
-        <p>I'm a passionate DevOps Engineer with over 4 years of experience in automating cloud infrastructure, CI/CD pipelines, and modernizing application deployments.</p>
-        <p>I specialize in AWS, Azure, Kubernetes, and Terraform, helping teams build scalable and resilient systems. I’ve designed secure cloud infrastructure, automated provisioning with Terraform, and improved system reliability with tools like Prometheus, ArgoCD, and AWS CloudWatch.</p>
-        <p>I love collaborating with developers, SREs, and security teams to drive improvement. Whether it’s building from scratch or improving existing systems, I bring strong technical and problem-solving skills to every project.</p>
-      </div>
-      <div class="about-stats">
-        <div class="stat-box"><h3>4+</h3><p>Years Experience</p></div>
-        <div class="stat-box"><h3>45+</h3><p>Tools & Platforms</p></div>
-        <div class="stat-box"><h3>5</h3><p>Certifications</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills Section -->
-  <section id="skills" class="skills-section">
-    <h2>Skills</h2>
-    <div class="skills-tags">
-      <span>AWS</span><span>Azure</span><span>GCP</span><span>Terraform</span><span>CloudFormation</span>
-      <span>Docker</span><span>Kubernetes</span><span>Helm</span><span>OpenShift</span><span>Istio</span>
-      <span>Ansible</span><span>Puppet</span><span>Jenkins</span><span>GitHub Actions</span><span>GitLab CI/CD</span>
-      <span>Azure DevOps</span><span>ArgoCD</span><span>Prometheus</span><span>Grafana</span><span>ELK Stack</span>
-      <span>Datadog</span><span>Splunk</span><span>AWS CloudWatch</span><span>Azure Monitor</span><span>Bash</span>
-      <span>Python</span><span>PowerShell</span><span>AWS IAM</span><span>AAD</span><span>SonarQube</span>
-      <span>Snyk</span><span>Trivy</span><span>JMeter</span><span>OPA</span>
-    </div>
-  </section>
-
-  <!-- Experience Section -->
-  <section id="experience" class="experience-section">
-    <h2>Experience</h2>
-    <div class="timeline">
-
-      <div class="timeline-item" data-aos="fade-up">
-        <div class="timeline-date">2023 - Present</div>
-        <div class="timeline-content">
-          <h3>Liberty Mutual Finance</h3>
-          <p class="role">DevOps Engineer</p>
-          <ul>
-            <li>Automated AWS infrastructure using Terraform for consistent provisioning across environments.</li>
-            <li>Managed GitHub Actions and Jenkins pipelines for microservices deployment with built-in quality gates.</li>
-            <li>Used ArgoCD and Helm to deploy workloads to Amazon EKS with minimal downtime.</li>
-            <li>Configured Prometheus, Grafana, and CloudWatch for proactive monitoring and alerting.</li>
-            <li>Collaborated with security teams to implement IAM roles, SonarQube, Snyk, and OPA policies for compliance.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="timeline-item" data-aos="fade-up">
-        <div class="timeline-date">2021 - 2023</div>
-        <div class="timeline-content">
-          <h3>Synechron INC</h3>
-          <p class="role">DevOps Engineer</p>
-          <ul>
-            <li>Implemented CI/CD pipelines in Azure DevOps to automate deployment of microservices in AKS clusters.</li>
-            <li>Managed infrastructure automation with Ansible and Terraform for hybrid environments.</li>
-            <li>Built Docker images and integrated them into GitLab pipelines for QA and staging environments.</li>
-            <li>Used ELK Stack and Datadog for log aggregation, performance monitoring, and metrics visualization.</li>
-            <li>Created Bash and Python scripts to streamline operational workflows and data migration.</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </section>
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pavan Kumar Aravapalli - DevOps Engineer</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-
-  <style>
-    <!-- Certifications Section -->
-  <section id="certifications" class="certifications-section">
-    <h2>Certifications</h2>
-    <div class="certification-grid">
-      <div class="certification-card blue">
-        <img src="https://d1.awsstatic.com/training-and-certification/Certification%20Badges/AWS-Certified_Solutions-Architect-Associate_512x512.1e0d74c4f4d8e1b5c136e5ef7f4f0f65bc7a5f3e.png" alt="AWS" />
-        <h3>AWS Certified Solutions Architect - Associate (SAA-C03)</h3>
-        <p>AWS<br>Issued 2025</p>
-        <a href="#" class="btn">View Certificate</a>
-      </div>
-      <div class="certification-card green">
-        <img src="https://www.datocms-assets.com/2885/1620155111-terraform-badge.png" alt="Terraform" />
-        <h3>HashiCorp Certified: Terraform Associate</h3>
-        <p>HashiCorp<br>Issued 2024</p>
-        <a href="#" class="btn">View Certificate</a>
-      </div>
-      <div class="certification-card red">
-        <img src="https://cdn.worldvectorlogo.com/logos/kubernetes-1.svg" alt="CKA" />
-        <h3>Certified Kubernetes Administrator (CKA)</h3>
-        <p>Linux Foundation<br>Issued 2024</p>
-        <a href="#" class="btn">View Certificate</a>
-      </div>
-      <div class="certification-card brown">
-        <img src="https://cdn.worldvectorlogo.com/logos/kubernetes-1.svg" alt="CKAD" />
-        <h3>Certified Kubernetes Application Developer (CKAD)</h3>
-        <p>Linux Foundation<br>Issued 2024</p>
-        <a href="#" class="btn">View Certificate</a>
-      </div>
-    </div>
-  </section>\
-</body>
-</html>
+  <!-- Particle background script -->
   <script>
-    function updateTime() {
-      const now = new Date();
-      const format = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
-      const pst = now.toLocaleTimeString('en-US', { timeZone: 'America/Los_Angeles', ...format });
-      const cst = now.toLocaleTimeString('en-US', { timeZone: 'America/Chicago', ...format });
-      const est = now.toLocaleTimeString('en-US', { timeZone: 'America/New_York', ...format });
+    tsParticles.load("tsparticles", {
+      fullScreen: { enable: false },
+      background: { color: { value: "transparent" } },
+      fpsLimit: 60,
+      interactivity: {
+        events: {
+          onHover: { enable: true, mode: "grab" }
+        },
+        modes: {
+          grab: { distance: 140, links: { opacity: 0.5 } }
+        }
+      },
+      particles: {
+        color: { value: "#9fcbff" },
+        links: {
+          color: "#9fcbff",
+          distance: 150,
+          enable: true,
+          opacity: 0.2,
+          width: 1
+        },
+        collisions: { enable: false },
+        move: {
+          direction: "none",
+          enable: true,
+          outModes: "bounce",
+          speed: 1
+        },
+        number: {
+          value: 100,
+          density: { enable: true, area: 800 }
+        },
+        opacity: { value: 0.4 },
+        shape: { type: "circle" },
+        size: { value: { min: 1, max: 3 } }
+      },
+      detectRetina: true
+    });
+  </script>
 
-      const pstDate = now.toLocaleDateString('en-US', { timeZone: 'America/Los_Angeles' });
-      const cstDate = now.toLocaleDateString('en-US', { timeZone: 'America/Chicago' });
-      const estDate = now.toLocaleDateString('en-US', { timeZone: 'America/New_York' });
+  <!-- Hamburger menu script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('nav-links');
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    });
+  </script>
 
-      document.getElementById('pst-time').innerHTML = `<strong style="color:#000">${pst}</strong><br><span style="font-size:12px;">${pstDate}</span>`;
-      document.getElementById('cst-time').innerHTML = `<strong style="color:#000">${cst}</strong><br><span style="font-size:12px;">${cstDate}</span>`;
-      document.getElementById('est-time').innerHTML = `<strong style="color:#000">${est}</strong><br><span style="font-size:12px;">${estDate}</span>`;
-    }
-    setInterval(updateTime, 1000);
-    updateTime();
-
-    AOS.init();
+  <!-- AOS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true });
   </script>
 </body>
 </html>
