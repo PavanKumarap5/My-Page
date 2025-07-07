@@ -403,23 +403,23 @@ nav a:hover {
 
 .certification-grid {
   display: flex;
-  flex-wrap: nowrap;               /* ⛔ Don't allow wrapping */
+  flex-wrap: nowrap;              /* ✅ Force all in one row */
   justify-content: center;
   gap: 20px;
-  max-width: 1100px;
+  max-width: 1080px;              /* ✅ Fits four 250px cards + gaps */
   margin: 0 auto;
-  overflow-x: auto;                /* ✅ Enables horizontal scroll if needed */
+  overflow-x: auto;               /* ✅ Allows horizontal scroll if needed */
   padding-bottom: 20px;
-  -ms-overflow-style: none;        /* IE and Edge */
-  scrollbar-width: none;           /* Firefox */
+  scrollbar-width: none;          /* Firefox */
+  -ms-overflow-style: none;       /* Edge */
 }
 
 .certification-grid::-webkit-scrollbar {
-  display: none;                   /* Hide scroll bar */
+  display: none;                  /* ✅ Hides scroll bar (Chrome) */
 }
 
 .cert-card {
-  flex: 0 0 250px;                 /* ⛔ Fixed width: Don't stretch */
+  flex: 0 0 250px;                /* ✅ Fixed width, no shrinking */
   min-width: 250px;
   max-width: 250px;
   background: #fff;
@@ -429,7 +429,6 @@ nav a:hover {
   box-sizing: border-box;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 
 .cert-card:hover {
   transform: translateY(-6px);
