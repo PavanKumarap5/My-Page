@@ -403,22 +403,19 @@ nav a:hover {
 
 .certification-grid {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* 🔥 This forces all cards to stay in one row */
   justify-content: center;
   gap: 20px;
-  max-width: 1060px;
+  max-width: 1100px;
   margin: 0 auto;
+  overflow-x: auto;  /* ✅ Important for mobile scroll */
+  padding-bottom: 20px;
 }
 
 .cert-card {
   flex: 0 0 250px;
+  min-width: 250px;
   max-width: 250px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  padding: 20px 15px;
-  box-sizing: border-box;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cert-card:hover {
