@@ -550,7 +550,7 @@
     AOS.init();
   </script>
 
-  <section class="contact" id="contact">
+ <section class="contact" id="contact">
   <div class="container">
     <h2 class="section-title">Get In Touch</h2>
     <div class="contact-content">
@@ -616,165 +616,47 @@
 </section>
 
 <footer class="footer">
-  <div class="container">
-    <p>&copy; 2025 Pavan Kumar Aravapalli. All Rights Reserved.</p>
-    <div class="social-icons">
-      <a href="https://www.linkedin.com/in/apavankumar7" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-      <a href="https://github.com/pavankumarap5" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="mailto:pavankumar23051@gmail.com"><i class="fas fa-envelope"></i></a>
-    </div>
+  <p>&copy; 2025 Pavan Kumar Aravapalli. All Rights Reserved.</p>
+  <div class="footer-icons">
+    <a href="https://www.linkedin.com/in/apavankumar7" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="mailto:pavankumar23051@gmail.com"><i class="fas fa-envelope"></i></a>
+    <a href="tel:5135702537"><i class="fas fa-phone"></i></a>
   </div>
 </footer>
 
 <style>
-.contact {
-  padding: 80px 0;
-  background-color: #f8f9fc;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 40px;
-  position: relative;
-}
-
-.section-title::after {
-  content: "";
-  width: 60px;
-  height: 3px;
-  background: #007bff;
-  display: block;
-  margin: 10px auto 0;
-  border-radius: 3px;
-}
-
-.contact-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 40px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.contact-left, .contact-right {
-  flex: 1;
-  min-width: 320px;
-}
-
-.contact-info {
-  background: white;
-  padding: 20px 25px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-}
-
-.contact-info:hover {
-  transform: translateY(-5px);
-}
-
-.contact-icon {
-  margin-right: 20px;
-}
-
-.icon-circle {
-  width: 45px;
-  height: 45px;
-  background-color: #e0f0ff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  color: #007bff;
-}
-
-.contact-details h4 {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 600;
-  color: #222;
-}
-
-.contact-details a, .contact-details p {
-  color: #007bff;
-  font-size: 14px;
-  word-break: break-word;
-  margin: 3px 0 0;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 12px 15px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background: #f1f3f7;
-  font-size: 14px;
-}
-
-.contact-form textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.send-btn {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 12px 24px;
-  font-size: 14px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 100%;
-}
-
-.send-btn:hover {
-  background-color: #0056b3;
-}
-
 .footer {
   text-align: center;
-  padding: 30px 0;
-  background: #ffffff;
-  border-top: 1px solid #eee;
+  padding: 30px 20px;
+  background: transparent;
   font-size: 14px;
-  color: #666;
-  margin-top: 50px;
+  color: #555;
+  margin-top: 40px;
 }
 
-.social-icons {
-  margin-top: 10px;
+.footer p {
+  margin-bottom: 15px;
+  color: #777;
 }
 
-.social-icons a {
-  display: inline-block;
+.footer-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin: 0 10px;
-  color: #fff;
-  background-color: #007bff;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  line-height: 36px;
-  text-align: center;
-  font-size: 16px;
-  transition: background 0.3s ease;
+  background-color: #e0f0ff;
+  color: #007bff;
+  font-size: 18px;
+  transition: all 0.3s ease;
 }
 
-.social-icons a:hover {
-  background-color: #0056b3;
+.footer-icons a:hover {
+  transform: translateY(-4px);
+  background-color: #007bff;
+  color: white;
 }
 </style>
 
