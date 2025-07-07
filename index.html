@@ -511,49 +511,6 @@
 
     AOS.init();
   </script>
-<script>
-  const canvas = document.getElementById("canvas");
-  const ctx = canvas.getContext("2d");
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  let points = [];
-  const spacing = 80;
-
-  for (let x = 0; x < canvas.width; x += spacing) {
-    for (let y = 0; y < canvas.height; y += spacing) {
-      points.push({ x: x + Math.random() * 20, y: y + Math.random() * 20 });
-    }
-  }
-
-  function drawLines() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.strokeStyle = "rgba(100,100,255,0.2)";
-    points.forEach(p1 => {
-      points.forEach(p2 => {
-        const dist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
-        if (dist < 120) {
-          ctx.beginPath();
-          ctx.moveTo(p1.x, p1.y);
-          ctx.lineTo(p2.x, p2.y);
-          ctx.stroke();
-        }
-      });
-    });
-  }
-
-  function animate() {
-    drawLines();
-    requestAnimationFrame(animate);
-  }
-
-  animate();
-
-  window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  });
-</script>
 
 </body>
 </html>
