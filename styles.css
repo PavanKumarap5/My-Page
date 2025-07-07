@@ -527,29 +527,3 @@ nav a:hover {
   min-width: 250px;
   max-width: 250px;
 }
-/* === Scroll-activated Navbar Underline Effect === */
-nav a {
-  position: relative;
-  padding-bottom: 6px;
-  transition: color 0.3s ease;
-}
-
-nav a.active {
-  color: #007bff;
-  font-weight: 600;
-}
-
-nav a.active::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 3px;
-  width: 100%;
-  background-color: #007bff;
-  border-radius: 2px;
-}
-
-
-
-
