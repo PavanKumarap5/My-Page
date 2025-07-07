@@ -507,6 +507,27 @@ nav a:hover {
 .card-brown a:hover {
   background: #804020;
 }
+/* ✅ Force certifications to stay in one row */
+.certification-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  padding: 0 20px;
+}
+
+.certification-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 20px;
+  min-width: 1080px;     /* Force room for all 4 cards */
+}
+
+.cert-card {
+  flex: 0 0 250px;
+  min-width: 250px;
+  max-width: 250px;
+}
+
 
 
 
