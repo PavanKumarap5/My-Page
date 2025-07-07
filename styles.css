@@ -60,6 +60,34 @@ nav a:hover {
   color: #007bff;
 }
 
+nav {
+  position: relative;
+}
+
+.nav-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #007bff;
+  transition: 0.3s ease;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li:hover ~ .nav-underline {
+  width: 100%;
+}
+
 /* === INTRO SECTION === */
 .intro-section {
   display: flex;
