@@ -1,4 +1,4 @@
-// === Canvas Animation Background ===
+// Create and style canvas
 const canvas = document.createElement('canvas');
 canvas.id = 'network-canvas';
 canvas.style.position = 'fixed';
@@ -58,47 +58,37 @@ resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
 requestAnimationFrame(drawNetwork);
 
-// === Timezone Clock ===
-function updateTime() {
-  const now = new Date();
+// Timezone with date and black time
+document.addEventListener("DOMContentLoaded", () => {
+  function updateTime() {
+    const now = new Date();
 
-  const pstTime = now.toLocaleTimeString('en-US', {
-    timeZone: 'America/Los_Angeles',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit'
-  });
-  const pstDate = now.toLocaleDateString('en-US', {
-    timeZone: 'America/Los_Angeles'
-  });
+    const formatOptions = (tz) => ({
+      timeZone: tz,
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+    });
 
-  const cstTime = now.toLocaleTimeString('en-US', {
-    timeZone: 'America/Chicago',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit'
-  });
-  const cstDate = now.toLocaleDateString('en-US', {
-    timeZone: 'America/Chicago'
-  });
+    const formatDate = (tz) => now.toLocaleDateString('en-US', { timeZone: tz });
 
-  const estTime = now.toLocaleTimeString('en-US', {
-    timeZone: 'America/New_York',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit'
-  });
-  const estDate = now.toLocaleDateString('en-US', {
-    timeZone: 'America/New_York'
-  });
+    const update = (id, label, tz) => {
+      const time = now.toLocaleTimeString('en-US', formatOptions(tz));
+      const date = formatDate(tz);
+      document.getElementById(id).innerHTML = `
+        <div style="background:#fff;padding:16px;border-radius:12px;box-shadow:0 4px 8px rgba(0,0,0,0.06);text-align:center;min-width:100px;">
+          <div style="font-weight:bold;color:#007bff;">${label}</div>
+          <div style="font-size:18px;color:#000;">${time}</div>
+          <div style="font-size:13px;margin-top:4px;color:#007bff;">${date}</div>
+        </div>
+      `;
+    };
 
-  document.getElementById('pst-time').innerHTML =
-    `<strong style="color:#000">${pstTime}</strong><br><span style="font-size:12px;">${pstDate}</span>`;
-  document.getElementById('cst-time').innerHTML =
-    `<strong style="color:#000">${cstTime}</strong><br><span style="font-size:12px;">${cstDate}</span>`;
-  document.getElementById('est-time').innerHTML =
-    `<strong style="color:#000">${estTime}</strong><br><span style="font-size:12px;">${estDate}</span>`;
-}
+    update('pst-time', 'PST', 'America/Los_Angeles');
+    update('cst-time', 'CST', 'America/Chicago');
+    update('est-time', 'EST', 'America/New_York');
+  }
 
-setInterval(updateTime, 1000);
-updateTime();
+  setInterval(updateTime, 1000);
+  updateTime();
+});
