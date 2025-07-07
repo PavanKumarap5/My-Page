@@ -473,19 +473,3 @@ nav a:hover {
   transition: background-color 0.3s ease;
 }
 
-/* === CARD COLORS === */
-.card-blue { border-top: 4px solid #1f4cff; }
-.card-blue a { background: #1f4cff; }
-.card-blue a:hover { background: #163fd8; }
-
-.card-green { border-top: 4px solid #28a745; }
-.card-green a { background: #28a745; }
-.card-green a:hover { background: #1e7e34; }
-
-.card-red { border-top: 4px solid #dc3545; }
-.card-red a { background: #dc3545; }
-.card-red a:hover { background: #b52a37; }
-
-.card-brown { border-top: 4px solid #a0522d; }
-.card-brown a { background: #a0522d; }
-.card-brown a:hover { background: #804020; }
