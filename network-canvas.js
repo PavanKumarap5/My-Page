@@ -58,37 +58,40 @@ resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
 requestAnimationFrame(drawNetwork);
 
-// Timezone with date and black time
-document.addEventListener("DOMContentLoaded", () => {
-  function updateTime() {
-    const now = new Date();
+// Timezone with date and black time inside styled boxes
+function updateTime() {
+  const now = new Date();
 
-    const formatOptions = (tz) => ({
-      timeZone: tz,
+  const timezones = [
+    { id: 'pst-time', zone: 'America/Los_Angeles', label: 'PST' },
+    { id: 'cst-time', zone: 'America/Chicago', label: 'CST' },
+    { id: 'est-time', zone: 'America/New_York', label: 'EST' },
+  ];
+
+  timezones.forEach(({ id, zone, label }) => {
+    const time = now.toLocaleTimeString('en-US', {
+      timeZone: zone,
       hour: '2-digit',
       minute: '2-digit',
-      second: '2-digit',
+      second: '2-digit'
     });
 
-    const formatDate = (tz) => now.toLocaleDateString('en-US', { timeZone: tz });
+    const date = now.toLocaleDateString('en-US', {
+      timeZone: zone
+    });
 
-    const update = (id, label, tz) => {
-      const time = now.toLocaleTimeString('en-US', formatOptions(tz));
-      const date = formatDate(tz);
-      document.getElementById(id).innerHTML = `
-        <div style="background:#fff;padding:16px;border-radius:12px;box-shadow:0 4px 8px rgba(0,0,0,0.06);text-align:center;min-width:100px;">
-          <div style="font-weight:bold;color:#007bff;">${label}</div>
-          <div style="font-size:18px;color:#000;">${time}</div>
-          <div style="font-size:13px;margin-top:4px;color:#007bff;">${date}</div>
+    const element = document.getElementById(id);
+    if (element) {
+      element.innerHTML = `
+        <div style="background: white; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 10px 15px; border-radius: 12px; min-width: 100px; text-align: center;">
+          <div style="color: #007bff; font-weight: bold; font-size: 14px;">${label}</div>
+          <div style="color: #000; font-size: 16px;">${time}</div>
+          <div style="font-size: 12px; color: #007bff;">${date}</div>
         </div>
       `;
-    };
+    }
+  });
+}
 
-    update('pst-time', 'PST', 'America/Los_Angeles');
-    update('cst-time', 'CST', 'America/Chicago');
-    update('est-time', 'EST', 'America/New_York');
-  }
-
-  setInterval(updateTime, 1000);
-  updateTime();
-});
+setInterval(updateTime, 1000);
+updateTime();
