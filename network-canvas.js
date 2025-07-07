@@ -1,4 +1,4 @@
-// Create and style canvas
+// === Canvas Animation Background ===
 const canvas = document.createElement('canvas');
 canvas.id = 'network-canvas';
 canvas.style.position = 'fixed';
@@ -58,7 +58,7 @@ resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
 requestAnimationFrame(drawNetwork);
 
-// Timezone with date and black time
+// === Timezone Clock ===
 function updateTime() {
   const now = new Date();
 
@@ -92,13 +92,12 @@ function updateTime() {
     timeZone: 'America/New_York'
   });
 
- document.getElementById('pst-time').innerHTML =
+  document.getElementById('pst-time').innerHTML =
     `<strong style="color:#000">${pstTime}</strong><br><span style="font-size:12px;">${pstDate}</span>`;
   document.getElementById('cst-time').innerHTML =
     `<strong style="color:#000">${cstTime}</strong><br><span style="font-size:12px;">${cstDate}</span>`;
   document.getElementById('est-time').innerHTML =
     `<strong style="color:#000">${estTime}</strong><br><span style="font-size:12px;">${estDate}</span>`;
-
 }
 
 setInterval(updateTime, 1000);
