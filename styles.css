@@ -1,10 +1,13 @@
+/* === GLOBAL STYLES === */
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;
+  padding: 0;
   background-color: #f9f9fb;
   color: #333;
 }
 
+/* === HEADER === */
 header {
   display: flex;
   justify-content: space-between;
@@ -20,8 +23,8 @@ header {
 
 header h2 {
   margin: 0;
-  white-space: nowrap;
   font-size: 22px;
+  white-space: nowrap;
 }
 
 nav ul {
@@ -47,10 +50,12 @@ nav a:hover {
   color: #007bff;
 }
 
+/* === INTRO SECTION === */
 .intro {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 0; /* Removed extra gap */
+  padding-top: 20px;
 }
 
 .intro-box {
@@ -161,6 +166,7 @@ nav a:hover {
   transform: scale(1.2);
 }
 
+/* === TIMEZONE BOX === */
 .timezone-box {
   display: flex;
   flex-direction: column;
@@ -190,7 +196,7 @@ nav a:hover {
   color: #000;
 }
 
-/* ✅ About Me Section */
+/* === ABOUT SECTION === */
 .about-section {
   padding: 60px 20px;
   background-color: #ffffff;
@@ -252,7 +258,7 @@ nav a:hover {
   margin: 0;
 }
 
-/* ✅ Skills Section */
+/* === SKILLS SECTION === */
 .skills-section {
   padding: 60px 20px;
   background-color: #fff;
@@ -288,8 +294,7 @@ nav a:hover {
   background-color: #f0f8ff;
 }
 
-
-/* ✅ Certifications Section */
+/* === CERTIFICATIONS SECTION === */
 .certifications-section {
   padding: 60px 20px;
   background: #fff;
@@ -313,23 +318,23 @@ nav a:hover {
 
 .certification-grid {
   display: flex;
-  flex-wrap: nowrap;              /* ✅ Force all in one row */
+  flex-wrap: nowrap;
   justify-content: center;
   gap: 20px;
-  max-width: 1080px;              /* ✅ Fits four 250px cards + gaps */
+  max-width: 1080px;
   margin: 0 auto;
-  overflow-x: auto;               /* ✅ Allows horizontal scroll if needed */
+  overflow-x: auto;
   padding-bottom: 20px;
-  scrollbar-width: none;          /* Firefox */
-  -ms-overflow-style: none;       /* Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .certification-grid::-webkit-scrollbar {
-  display: none;                  /* ✅ Hides scroll bar (Chrome) */
+  display: none;
 }
 
 .cert-card {
-  flex: 0 0 250px;                /* ✅ Fixed width, no shrinking */
+  flex: 0 0 250px;
   min-width: 250px;
   max-width: 250px;
   background: #fff;
@@ -378,43 +383,19 @@ nav a:hover {
   transition: background-color 0.3s ease;
 }
 
-.card-blue {
-  border-top: 4px solid #1f4cff;
-}
-.card-blue a {
-  background: #1f4cff;
-}
-.card-blue a:hover {
-  background: #163fd8;
-}
+/* === CARD COLORS === */
+.card-blue { border-top: 4px solid #1f4cff; }
+.card-blue a { background: #1f4cff; }
+.card-blue a:hover { background: #163fd8; }
 
-.card-green {
-  border-top: 4px solid #28a745;
-}
-.card-green a {
-  background: #28a745;
-}
-.card-green a:hover {
-  background: #1e7e34;
-}
+.card-green { border-top: 4px solid #28a745; }
+.card-green a { background: #28a745; }
+.card-green a:hover { background: #1e7e34; }
 
-.card-red {
-  border-top: 4px solid #dc3545;
-}
-.card-red a {
-  background: #dc3545;
-}
-.card-red a:hover {
-  background: #b52a37;
-}
+.card-red { border-top: 4px solid #dc3545; }
+.card-red a { background: #dc3545; }
+.card-red a:hover { background: #b52a37; }
 
-.card-brown {
-  border-top: 4px solid #a0522d;
-}
-.card-brown a {
-  background: #a0522d;
-}
-.card-brown a:hover {
-  background: #804020;
-}
-
+.card-brown { border-top: 4px solid #a0522d; }
+.card-brown a { background: #a0522d; }
+.card-brown a:hover { background: #804020; }
