@@ -316,5 +316,23 @@
   <script>
     AOS.init({ once: true });
   </script>
+  <script>
+  const navLinks = document.querySelectorAll('#nav-links li a');
+  const underline = document.querySelector('.nav-underline');
+  const navContainer = document.querySelector('.nav-container');
+
+  navLinks.forEach(link => {
+    link.addEventListener('mouseenter', (e) => {
+      const linkRect = e.target.getBoundingClientRect();
+      const containerRect = navContainer.getBoundingClientRect();
+      underline.style.width = `${linkRect.width}px`;
+      underline.style.left = `${linkRect.left - containerRect.left}px`;
+    });
+  });
+
+  document.querySelector('nav').addEventListener('mouseleave', () => {
+    underline.style.width = 0;
+  });
+</script>
 </body>
 </html>
