@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -378,18 +377,16 @@
 
 <body>
   <header>
-  <h2>Pavan Kumar Aravapalli</h2>
-  <nav class="navbar">
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+    <h2>Pavan Kumar Aravapalli</h2>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <!-- Intro Section -->
   <section class="intro">
@@ -542,9 +539,9 @@
       const cstDate = now.toLocaleDateString('en-US', { timeZone: 'America/Chicago' });
       const estDate = now.toLocaleDateString('en-US', { timeZone: 'America/New_York' });
 
-      document.getElementById('pst-time').innerHTML = `<strong style="color:#000">${pst}</strong><br><span style="font-size:12px;">${pstDate}</span>`;
-      document.getElementById('cst-time').innerHTML = `<strong style="color:#000">${cst}</strong><br><span style="font-size:12px;">${cstDate}</span>`;
-      document.getElementById('est-time').innerHTML = `<strong style="color:#000">${est}</strong><br><span style="font-size:12px;">${estDate}</span>`;
+      document.getElementById('pst-time').innerHTML = <strong style="color:#000">${pst}</strong><br><span style="font-size:12px;">${pstDate}</span>;
+      document.getElementById('cst-time').innerHTML = <strong style="color:#000">${cst}</strong><br><span style="font-size:12px;">${cstDate}</span>;
+      document.getElementById('est-time').innerHTML = <strong style="color:#000">${est}</strong><br><span style="font-size:12px;">${estDate}</span>;
     }
     setInterval(updateTime, 1000);
     updateTime();
