@@ -40,8 +40,8 @@ function drawNetwork() {
 
   for (let i = 0; i < points.length; i++) {
     for (let j = i + 1; j < points.length; j++) {
-      let a = points[i], b = points[j];
-      let dist = Math.hypot(a.x - b.x, a.y - b.y);
+      const a = points[i], b = points[j];
+      const dist = Math.hypot(a.x - b.x, a.y - b.y);
       if (dist < 100) {
         ctx.beginPath();
         ctx.moveTo(a.x, a.y);
@@ -51,12 +51,14 @@ function drawNetwork() {
       }
     }
   }
+
   requestAnimationFrame(drawNetwork);
 }
 
 resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
 requestAnimationFrame(drawNetwork);
+
 
 // === TIMEZONE CLOCKS ===
 function updateTime() {
@@ -81,14 +83,7 @@ function updateTime() {
     const element = document.getElementById(id);
     if (element) {
       element.innerHTML = `
-        <div style="
-          background: white;
-          border-radius: 12px;
-          padding: 12px 16px;
-          box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-          text-align: center;
-          min-width: 110px;
-        ">
+        <div class="clock-box">
           <div style="color: #007bff; font-weight: bold; font-size: 14px;">${label}</div>
           <div style="color: #000; font-size: 15px;">${time}</div>
           <div style="font-size: 12px; color: #007bff;">${date}</div>
