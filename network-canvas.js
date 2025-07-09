@@ -83,12 +83,19 @@ function updateTime() {
     const element = document.getElementById(id);
     if (element) {
       element.innerHTML = `
-        <div style="background: white; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 10px 15px; border-radius: 12px; min-width: 100px; text-align: center;">
-          <div style="color: #007bff; font-weight: bold; font-size: 14px;">${label}</div>
-          <div style="color: #000; font-size: 16px;">${time}</div>
-          <div style="font-size: 12px; color: #007bff;">${date}</div>
-        </div>
-      `;
+  <div style="
+    background: white;
+    border-radius: 12px;
+    padding: 12px 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    text-align: center;
+    min-width: 110px;
+  ">
+    <div style="color: #007bff; font-weight: bold; font-size: 14px;">${label}</div>
+    <div style="color: #000; font-size: 15px;">${time}</div>
+    <div style="font-size: 12px; color: #007bff;">${date}</div>
+  </div>
+`;
     }
   });
 }
