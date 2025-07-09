@@ -529,21 +529,32 @@
 </section>
   
   <script>
-    function updateTime() {
-      const now = new Date();
-      const format = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
-      const pst = now.toLocaleTimeString('en-US', { timeZone: 'America/Los_Angeles', ...format });
-      const cst = now.toLocaleTimeString('en-US', { timeZone: 'America/Chicago', ...format });
-      const est = now.toLocaleTimeString('en-US', { timeZone: 'America/New_York', ...format });
+   function updateTime() {
+  const now = new Date();
+  const format = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
 
-      const pstDate = now.toLocaleDateString('en-US', { timeZone: 'America/Los_Angeles' });
-      const cstDate = now.toLocaleDateString('en-US', { timeZone: 'America/Chicago' });
-      const estDate = now.toLocaleDateString('en-US', { timeZone: 'America/New_York' });
+  const pst = now.toLocaleTimeString('en-US', { timeZone: 'America/Los_Angeles', ...format });
+  const cst = now.toLocaleTimeString('en-US', { timeZone: 'America/Chicago', ...format });
+  const est = now.toLocaleTimeString('en-US', { timeZone: 'America/New_York', ...format });
 
-      document.getElementById('pst-time').innerHTML = <strong style="color:#000">${pst}</strong><br><span style="font-size:12px;">${pstDate}</span>;
-      document.getElementById('cst-time').innerHTML = <strong style="color:#000">${cst}</strong><br><span style="font-size:12px;">${cstDate}</span>;
-      document.getElementById('est-time').innerHTML = <strong style="color:#000">${est}</strong><br><span style="font-size:12px;">${estDate}</span>;
-    }
+  const pstDate = now.toLocaleDateString('en-US', { timeZone: 'America/Los_Angeles' });
+  const cstDate = now.toLocaleDateString('en-US', { timeZone: 'America/Chicago' });
+  const estDate = now.toLocaleDateString('en-US', { timeZone: 'America/New_York' });
+
+  document.getElementById('pst-time').innerHTML = `
+    <strong style="color:#000">${pst}</strong><br>
+    <span style="font-size:12px;">${pstDate}</span>
+  `;
+  document.getElementById('cst-time').innerHTML = `
+    <strong style="color:#000">${cst}</strong><br>
+    <span style="font-size:12px;">${cstDate}</span>
+  `;
+  document.getElementById('est-time').innerHTML = `
+    <strong style="color:#000">${est}</strong><br>
+    <span style="font-size:12px;">${estDate}</span>
+  `;
+}
+
     setInterval(updateTime, 1000);
     updateTime();
     AOS.init();
