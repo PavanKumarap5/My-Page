@@ -61,7 +61,6 @@ requestAnimationFrame(drawNetwork);
 // === TIMEZONE CLOCKS ===
 function updateTime() {
   const now = new Date();
-
   const timezones = [
     { id: 'pst-time', zone: 'America/Los_Angeles', label: 'PST' },
     { id: 'cst-time', zone: 'America/Chicago', label: 'CST' },
@@ -77,9 +76,7 @@ function updateTime() {
       hour12: false
     });
 
-    const date = now.toLocaleDateString('en-US', {
-      timeZone: zone
-    });
+    const date = now.toLocaleDateString('en-US', { timeZone: zone });
 
     const element = document.getElementById(id);
     if (element) {
@@ -100,6 +97,7 @@ function updateTime() {
     }
   });
 }
+
 
 setInterval(updateTime, 1000);
 updateTime();
