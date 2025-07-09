@@ -1,4 +1,4 @@
-// Create and style canvas
+// === BACKGROUND NETWORK CANVAS ===
 const canvas = document.createElement('canvas');
 canvas.id = 'network-canvas';
 canvas.style.position = 'fixed';
@@ -58,7 +58,7 @@ resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
 requestAnimationFrame(drawNetwork);
 
-// Timezone with date and black time inside styled boxes
+// === TIMEZONE CLOCKS ===
 function updateTime() {
   const now = new Date();
 
@@ -73,7 +73,8 @@ function updateTime() {
       timeZone: zone,
       hour: '2-digit',
       minute: '2-digit',
-      second: '2-digit'
+      second: '2-digit',
+      hour12: false
     });
 
     const date = now.toLocaleDateString('en-US', {
@@ -83,19 +84,19 @@ function updateTime() {
     const element = document.getElementById(id);
     if (element) {
       element.innerHTML = `
-  <div style="
-    background: white;
-    border-radius: 12px;
-    padding: 12px 16px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    text-align: center;
-    min-width: 110px;
-  ">
-    <div style="color: #007bff; font-weight: bold; font-size: 14px;">${label}</div>
-    <div style="color: #000; font-size: 15px;">${time}</div>
-    <div style="font-size: 12px; color: #007bff;">${date}</div>
-  </div>
-`;
+        <div style="
+          background: white;
+          border-radius: 12px;
+          padding: 12px 16px;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+          text-align: center;
+          min-width: 110px;
+        ">
+          <div style="color: #007bff; font-weight: bold; font-size: 14px;">${label}</div>
+          <div style="color: #000; font-size: 15px;">${time}</div>
+          <div style="font-size: 12px; color: #007bff;">${date}</div>
+        </div>
+      `;
     }
   });
 }
