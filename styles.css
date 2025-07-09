@@ -3,7 +3,11 @@
 .intro-section {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  align-items: center; /* Add this */
+  min-height: 100vh;   /* Add this */
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .intro-box {
