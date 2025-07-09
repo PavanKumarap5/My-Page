@@ -201,7 +201,7 @@
   </header>
 
   <section class="intro-section">
-    <div class="intro-box">
+    <div class="intro-box" data-aos="fade-up" data-aos-duration="1000">
       <img src="profile.jpg" alt="Profile" class="profile-pic" />
       <h1>Pavan Kumar Aravapalli</h1>
       <h2 class="title">AWS Certified DevOps Engineer</h2>
@@ -276,5 +276,13 @@
     setInterval(updateTime, 1000);
     updateTime();
   </script>
+  <!-- AOS Animation CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+<!-- AOS Animation JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ once: true });
+</script>
 </body>
 </html>
