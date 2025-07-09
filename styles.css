@@ -276,11 +276,9 @@ nav ul li:hover ~ .nav-underline {
 }
 
 .btn {
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  font-size: 14px;
+  padding: 8px 18px;
+  border-radius: 6px;
 }
 
 .btn.primary {
