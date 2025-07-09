@@ -89,7 +89,6 @@ nav ul li:hover ~ .nav-underline {
   z-index: 1;
 }
 
-/* WRAPPER to arrange intro + clocks side by side */
 .intro-wrapper {
   display: flex;
   justify-content: center;
@@ -100,7 +99,6 @@ nav ul li:hover ~ .nav-underline {
   width: 100%;
 }
 
-/* Frosted profile box */
 .intro-box {
   background: rgba(255, 255, 255, 0.15);
   border: 2px solid rgba(0, 123, 255, 0.3);
@@ -115,7 +113,6 @@ nav ul li:hover ~ .nav-underline {
   color: #000;
 }
 
-/* Profile Image */
 .profile-pic {
   width: 130px;
   height: 130px;
@@ -130,7 +127,6 @@ nav ul li:hover ~ .nav-underline {
   transform: scale(1.1);
 }
 
-/* Intro content */
 .intro-box h1 {
   font-size: 24px;
   margin-bottom: 8px;
@@ -148,7 +144,6 @@ nav ul li:hover ~ .nav-underline {
   margin-bottom: 20px;
 }
 
-/* Buttons */
 .intro-buttons {
   display: flex;
   justify-content: center;
@@ -186,7 +181,6 @@ nav ul li:hover ~ .nav-underline {
   color: white;
 }
 
-/* Social Icons */
 .social-icons {
   margin-top: 20px;
 }
@@ -209,7 +203,6 @@ nav ul li:hover ~ .nav-underline {
   transform: scale(1.2);
 }
 
-/* Clocks on the right */
 .clock-group {
   display: flex;
   flex-direction: column;
@@ -228,4 +221,98 @@ nav ul li:hover ~ .nav-underline {
   min-width: 120px;
   text-align: center;
   line-height: 1.6;
+}
+
+/* === EXPERIENCE SECTION === */
+.experience-section {
+  padding: 80px 20px;
+  background: #fff;
+  text-align: center;
+  border-top: 1px solid #eee;
+}
+
+.experience-section h2 {
+  font-size: 28px;
+  color: #007bff;
+  margin-bottom: 60px;
+}
+
+.timeline {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-left: 100px;
+  border-left: 3px solid #007bff;
+  position: relative;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 60px;
+  padding-left: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 123, 255, 0.1);
+  background: #ffffff;
+  border-radius: 12px;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  background-color: #007bff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px #fff;
+  z-index: 1;
+}
+
+.timeline-date {
+  position: absolute;
+  left: -90px;
+  top: 0;
+  font-size: 14px;
+  color: #007bff;
+  font-weight: bold;
+  background: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.timeline-content {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.timeline-content h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.timeline-content .role {
+  font-size: 15px;
+  color: #007bff;
+  margin: 8px 0 12px;
+}
+
+.timeline-content ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.timeline-content ul li {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 10px;
 }
