@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pavan Kumar Aravapalli - DevOps Engineer</title>
 
-  <!-- Google Fonts, FontAwesome, AOS, tsParticles -->
+  <!-- Google Fonts, FontAwesome, tsParticles -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
 
   <style>
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
+      padding: 0;
       background-color: #f9f9fb;
       color: #333;
     }
@@ -43,8 +43,8 @@
 
     header h2 {
       margin: 0;
-      white-space: nowrap;
       font-size: 22px;
+      white-space: nowrap;
     }
 
     nav ul {
@@ -66,49 +66,11 @@
       color: #007bff;
     }
 
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-    }
-
-    .hamburger span {
-      width: 25px;
-      height: 3px;
-      background-color: #333;
-      transition: 0.3s;
-    }
-
-    @media (max-width: 768px) {
-      .hamburger {
-        display: flex;
-      }
-
-      nav ul {
-        flex-direction: column;
-        background-color: white;
-        width: 100%;
-        display: none;
-        margin-top: 20px;
-        padding: 10px 0;
-      }
-
-      nav ul.active {
-        display: flex;
-      }
-
-      nav ul li {
-        text-align: center;
-        margin: 10px 0;
-      }
-    }
-
     .intro-section {
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 120px 20px 80px;
+      padding: 100px 20px 80px;
       position: relative;
       z-index: 1;
     }
@@ -195,19 +157,39 @@
       font-weight: bold;
       color: #007bff;
       font-size: 14px;
+      min-width: 100px;
+      text-align: center;
+    }
+
+    .social-icons {
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 6px;
+      width: 36px;
+      height: 36px;
+      background: #007bff;
+      color: white;
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
     }
   </style>
 </head>
 <body>
   <div id="tsparticles"></div>
 
-  <!-- Header -->
-  <!-- Header -->
-<header>
-  <h2>Pavan Kumar Aravapalli</h2>
-  <nav>
-    <div class="nav-container">
-      <ul id="nav-links">
+  <header>
+    <h2>Pavan Kumar Aravapalli</h2>
+    <nav>
+      <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -215,36 +197,32 @@
         <li><a href="#certifications">Certifications</a></li>
         <li><a href="#contact">Get In Touch</a></li>
       </ul>
-      <span class="nav-underline"></span>
-    </div>
-  </nav>
-</header>
+    </nav>
+  </header>
 
-<!-- Intro Section -->
-<section class="intro-section">
-  <div class="intro-box">
-    <img src="profile.jpg" alt="Profile" class="profile-pic" />
-    <h1>Pavan Kumar Aravapalli</h1>
-    <h2 class="title">AWS Certified DevOps Engineer</h2>
-    <p class="desc">Experienced DevOps Engineer with expertise in cloud infrastructure, CI/CD, automation, and monitoring.</p>
-    <div class="buttons">
-      <a href="#contact" class="btn primary"><i class="fas fa-envelope"></i> Contact Me</a>
-      <a href="#experience" class="btn secondary"><i class="fas fa-briefcase"></i> View My Work</a>
+  <section class="intro-section">
+    <div class="intro-box">
+      <img src="profile.jpg" alt="Profile" class="profile-pic" />
+      <h1>Pavan Kumar Aravapalli</h1>
+      <h2 class="title">AWS Certified DevOps Engineer</h2>
+      <p class="desc">Experienced DevOps Engineer specializing in cloud infrastructure, automation, and CI/CD pipelines.</p>
+      <div class="intro-buttons">
+        <a href="#contact" class="btn primary"><i class="fas fa-envelope"></i> Contact Me</a>
+        <a href="#experience" class="btn secondary"><i class="fas fa-briefcase"></i> View My Work</a>
+      </div>
+      <div class="clocks">
+        <div id="pst-time" class="clock-box"></div>
+        <div id="cst-time" class="clock-box"></div>
+        <div id="est-time" class="clock-box"></div>
+      </div>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="mailto:your@email.com"><i class="fas fa-envelope"></i></a>
+      </div>
     </div>
-    <div class="timezone-row">
-      <div class="timezone"><h4>PST</h4><p id="pst-time"></p></div>
-      <div class="timezone"><h4>CST</h4><p id="cst-time"></p></div>
-      <div class="timezone"><h4>EST</h4><p id="est-time"></p></div>
-    </div>
-    <div class="social-icons">
-      <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="mailto:your@email.com"><i class="fas fa-envelope"></i></a>
-    </div>
-  </div>
-</section>
+  </section>
 
-  <!-- Particle background -->
   <script>
     tsParticles.load("tsparticles", {
       fullScreen: { enable: false },
@@ -267,104 +245,36 @@
           opacity: 0.2,
           width: 1
         },
-        collisions: { enable: false },
-        move: {
-          direction: "none",
-          enable: true,
-          outModes: "bounce",
-          speed: 1
-        },
-        number: {
-          value: 100,
-          density: { enable: true, area: 800 }
-        },
+        move: { enable: true, speed: 1 },
+        number: { value: 100, density: { enable: true, area: 800 } },
         opacity: { value: 0.4 },
         shape: { type: "circle" },
         size: { value: { min: 1, max: 3 } }
       },
       detectRetina: true
     });
-  </script>
 
-  <!-- Hamburger menu script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const hamburger = document.getElementById('hamburger');
-      const navLinks = document.getElementById('nav-links');
-      hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
+    function updateTime() {
+      const now = new Date();
+      const timezones = [
+        { id: 'pst-time', zone: 'America/Los_Angeles', label: 'PST' },
+        { id: 'cst-time', zone: 'America/Chicago', label: 'CST' },
+        { id: 'est-time', zone: 'America/New_York', label: 'EST' },
+      ];
+      timezones.forEach(({ id, zone, label }) => {
+        const time = now.toLocaleTimeString('en-US', {
+          timeZone: zone,
+          hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+        });
+        const date = now.toLocaleDateString('en-US', { timeZone: zone });
+        const element = document.getElementById(id);
+        if (element) {
+          element.innerHTML = `${label}<br>${time}<br>${date}`;
+        }
       });
-    });
-  </script>
-
-  <!-- Clock Script -->
-  <script>
-    function updateClocks() {
-      const pst = new Date().toLocaleString("en-US", { timeZone: "America/Los_Angeles", hour12: false });
-      const cst = new Date().toLocaleString("en-US", { timeZone: "America/Chicago", hour12: false });
-      const est = new Date().toLocaleString("en-US", { timeZone: "America/New_York", hour12: false });
-
-      document.getElementById("pst-time").innerHTML = pst.split(', ')[1] + "<br>" + pst.split(', ')[0];
-      document.getElementById("cst-time").innerHTML = cst.split(', ')[1] + "<br>" + cst.split(', ')[0];
-      document.getElementById("est-time").innerHTML = est.split(', ')[1] + "<br>" + est.split(', ')[0];
     }
-    setInterval(updateClocks, 1000);
-    updateClocks();
+    setInterval(updateTime, 1000);
+    updateTime();
   </script>
-
-  <!-- AOS Animation -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({ once: true });
-  </script>
-  <script>
-  const navLinks = document.querySelectorAll('#nav-links li a');
-  const underline = document.querySelector('.nav-underline');
-  const navContainer = document.querySelector('.nav-container');
-
-  navLinks.forEach(link => {
-    link.addEventListener('mouseenter', (e) => {
-      const linkRect = e.target.getBoundingClientRect();
-      const containerRect = navContainer.getBoundingClientRect();
-      underline.style.width = `${linkRect.width}px`;
-      underline.style.left = `${linkRect.left - containerRect.left}px`;
-    });
-  });
-
-  document.querySelector('nav').addEventListener('mouseleave', () => {
-    underline.style.width = 0;
-  });
-</script>
-
-  <script>
-  tsParticles.load("tsparticles", {
-    fullScreen: { enable: false },
-    background: { color: { value: "transparent" } },
-    fpsLimit: 60,
-    interactivity: {
-      events: { onHover: { enable: true, mode: "grab" } },
-      modes: { grab: { distance: 140, links: { opacity: 0.5 } } }
-    },
-    particles: {
-      color: { value: "#9fcbff" },
-      links: {
-        color: "#9fcbff",
-        distance: 150,
-        enable: true,
-        opacity: 0.2,
-        width: 1
-      },
-      move: {
-        enable: true,
-        speed: 1
-      },
-      number: { value: 100, density: { enable: true, area: 800 } },
-      opacity: { value: 0.4 },
-      shape: { type: "circle" },
-      size: { value: { min: 1, max: 3 } }
-    }
-  });
-</script>
-
 </body>
 </html>
