@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+<meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pavan Kumar Aravapalli - DevOps Engineer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
@@ -373,9 +373,10 @@
       margin-bottom: 10px;
     }
   </style>
-</head>
 
+</head>
 <body>
+ <body>
   <header>
     <h2>Pavan Kumar Aravapalli</h2>
     <nav>
@@ -532,33 +533,39 @@
     </div>
   </div>
 </section>
-  
+
   <script>
-   function updateTime() {
-  const now = new Date();
-  const format = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+    function updateTime() {
+      const now = new Date();
+      const format = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
 
-  const pst = now.toLocaleTimeString('en-US', { timeZone: 'America/Los_Angeles', ...format });
-  const cst = now.toLocaleTimeString('en-US', { timeZone: 'America/Chicago', ...format });
-  const est = now.toLocaleTimeString('en-US', { timeZone: 'America/New_York', ...format });
+      const pst = now.toLocaleTimeString('en-US', { timeZone: 'America/Los_Angeles', ...format });
+      const cst = now.toLocaleTimeString('en-US', { timeZone: 'America/Chicago', ...format });
+      const est = now.toLocaleTimeString('en-US', { timeZone: 'America/New_York', ...format });
 
-  const pstDate = now.toLocaleDateString('en-US', { timeZone: 'America/Los_Angeles' });
-  const cstDate = now.toLocaleDateString('en-US', { timeZone: 'America/Chicago' });
-  const estDate = now.toLocaleDateString('en-US', { timeZone: 'America/New_York' });
+      const pstDate = now.toLocaleDateString('en-US', { timeZone: 'America/Los_Angeles' });
+      const cstDate = now.toLocaleDateString('en-US', { timeZone: 'America/Chicago' });
+      const estDate = now.toLocaleDateString('en-US', { timeZone: 'America/New_York' });
 
-  document.getElementById('pst-time').innerHTML = `
-    <strong style="color:#000">${pst}</strong><br>
-    <span style="font-size:12px;">${pstDate}</span>
-  `;
-  document.getElementById('cst-time').innerHTML = `
-    <strong style="color:#000">${cst}</strong><br>
-    <span style="font-size:12px;">${cstDate}</span>
-  `;
-  document.getElementById('est-time').innerHTML = `
-    <strong style="color:#000">${est}</strong><br>
-    <span style="font-size:12px;">${estDate}</span>
-  `;
-}
+      document.querySelectorAll('#pst-time').forEach(el => {
+        el.innerHTML = `
+          <strong style="color:#000">${pst}</strong><br>
+          <span style="font-size:12px;">${pstDate}</span>
+        `;
+      });
+      document.querySelectorAll('#cst-time').forEach(el => {
+        el.innerHTML = `
+          <strong style="color:#000">${cst}</strong><br>
+          <span style="font-size:12px;">${cstDate}</span>
+        `;
+      });
+      document.querySelectorAll('#est-time').forEach(el => {
+        el.innerHTML = `
+          <strong style="color:#000">${est}</strong><br>
+          <span style="font-size:12px;">${estDate}</span>
+        `;
+      });
+    }
 
     setInterval(updateTime, 1000);
     updateTime();
