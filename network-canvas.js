@@ -1,3 +1,4 @@
+<script>
 // === BACKGROUND NETWORK CANVAS ===
 const canvas = document.createElement('canvas');
 canvas.id = 'network-canvas';
@@ -59,7 +60,6 @@ resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
 requestAnimationFrame(drawNetwork);
 
-
 // === TIMEZONE CLOCKS ===
 function updateTime() {
   const now = new Date();
@@ -86,3 +86,7 @@ function updateTime() {
 
 setInterval(updateTime, 1000);
 updateTime();
+
+// === INIT ANIMATIONS ===
+if (window.AOS) AOS.init();
+</script>
