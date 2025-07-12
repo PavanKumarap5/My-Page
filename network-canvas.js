@@ -63,33 +63,24 @@ requestAnimationFrame(drawNetwork);
 // === TIMEZONE CLOCKS ===
 function updateTime() {
   const now = new Date();
-  const timezones = [
-    { id: 'pst-time', zone: 'America/Los_Angeles', label: 'PST' },
-    { id: 'cst-time', zone: 'America/Chicago', label: 'CST' },
-    { id: 'est-time', zone: 'America/New_York', label: 'EST' },
-  ];
+  const format = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
 
-  timezones.forEach(({ id, zone, label }) => {
-    const time = now.toLocaleTimeString('en-US', {
-      timeZone: zone,
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      hour12: false
-    });
+  const pst = now.toLocaleTimeString('en-US', { timeZone: 'America/Los_Angeles', ...format });
+  const cst = now.toLocaleTimeString('en-US', { timeZone: 'America/Chicago', ...format });
+  const est = now.toLocaleTimeString('en-US', { timeZone: 'America/New_York', ...format });
 
-    const date = now.toLocaleDateString('en-US', { timeZone: zone });
+  const pstDate = now.toLocaleDateString('en-US', { timeZone: 'America/Los_Angeles' });
+  const cstDate = now.toLocaleDateString('en-US', { timeZone: 'America/Chicago' });
+  const estDate = now.toLocaleDateString('en-US', { timeZone: 'America/New_York' });
 
-    const element = document.getElementById(id);
-    if (element) {
-      element.innerHTML = `
-        <div class="clock-box">
-          <div style="color: #007bff; font-weight: bold; font-size: 14px;">${label}</div>
-          <div style="color: #000; font-size: 15px;">${time}</div>
-          <div style="font-size: 12px; color: #007bff;">${date}</div>
-        </div>
-      `;
-    }
+  document.querySelectorAll('.pst-time').forEach(el => {
+    el.innerHTML = `<strong style="color:#000">${pst}</strong><br><span style="font-size:12px;">${pstDate}</span>`;
+  });
+  document.querySelectorAll('.cst-time').forEach(el => {
+    el.innerHTML = `<strong style="color:#000">${cst}</strong><br><span style="font-size:12px;">${cstDate}</span>`;
+  });
+  document.querySelectorAll('.est-time').forEach(el => {
+    el.innerHTML = `<strong style="color:#000">${est}</strong><br><span style="font-size:12px;">${estDate}</span>`;
   });
 }
 
