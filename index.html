@@ -599,6 +599,20 @@
     </form>
   </div>
 </section>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+<script>
+  tsParticles.load("tsparticles", {
+    background: { color: { value: "#f9f9fb" } },
+    fpsLimit: 60,
+    particles: {
+      color: { value: "#007bff" },
+      links: { enable: true, color: "#007bff", distance: 150, opacity: 0.5 },
+      move: { enable: true, speed: 1 },
+      number: { value: 50 },
+      size: { value: 3 }
+    }
+  });
+</script>
 
 </body>
 </html>
