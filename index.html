@@ -538,19 +538,19 @@
       const cstDate = now.toLocaleDateString('en-US', { timeZone: 'America/Chicago' });
       const estDate = now.toLocaleDateString('en-US', { timeZone: 'America/New_York' });
 
-      document.querySelectorAll('pst-time').forEach(el => {
+      document.querySelector('.pst-time').forEach(el => {
         el.innerHTML = `
           <strong style="color:#000">${pst}</strong><br>
           <span style="font-size:12px;">${pstDate}</span>
         `;
       });
-      document.querySelectorAll('cst-time').forEach(el => {
+      document.querySelector('.cst-time').forEach(el => {
         el.innerHTML = `
           <strong style="color:#000">${cst}</strong><br>
           <span style="font-size:12px;">${cstDate}</span>
         `;
       });
-      document.querySelectorAll('est-time').forEach(el => {
+      document.querySelector('.est-time').forEach(el => {
         el.innerHTML = `
           <strong style="color:#000">${est}</strong><br>
           <span style="font-size:12px;">${estDate}</span>
