@@ -538,8 +538,7 @@
       const cstDate = now.toLocaleDateString('en-US', { timeZone: 'America/Chicago' });
       const estDate = now.toLocaleDateString('en-US', { timeZone: 'America/New_York' });
 
-      document.querySelector('.pst-time').forEach(el => {
-        el.innerHTML = `
+      document.querySelector('.pst-time').innerHTML =
           <strong style="color:#000">${pst}</strong><br>
           <span style="font-size:12px;">${pstDate}</span>
         `;
