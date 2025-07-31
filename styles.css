@@ -100,17 +100,18 @@ nav ul li:hover ~ .nav-underline {
 }
 
 .intro-box {
-  background: rgba(255, 255, 255, 0.15);
-  border: 2px solid rgba(0, 123, 255, 0.3);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 25px;
-  padding: 50px 40px;
-  max-width: 550px;
-  width: 100%;
-  text-align: center;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-  color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1000px;
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.4); /* TRANSPARENT, NOT WHITE */
+  backdrop-filter: blur(10px); /* LIGHT blur, not frosted-heavy */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12);
 }
 
 .profile-pic {
