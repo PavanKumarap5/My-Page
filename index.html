@@ -375,6 +375,8 @@
 
 </head>
  <body>
+   <div id="tsparticles" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
+
   <header>
     <h2>Pavan Kumar Aravapalli</h2>
     <nav>
@@ -629,6 +631,28 @@
       retina_detect: true
     });
   </script>
+   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+<script>
+  tsParticles.load("tsparticles", {
+    background: { color: { value: "#f9f9fb" } },
+    fpsLimit: 60,
+    particles: {
+      color: { value: "#007bff" },
+      links: {
+        enable: true,
+        distance: 150,
+        color: "#007bff",
+        opacity: 0.5,
+        width: 1,
+      },
+      move: { enable: true, speed: 1 },
+      number: { value: 60 },
+      opacity: { value: 0.4 },
+      size: { value: 2 }
+    }
+  });
+</script>
+
 
 </body>
 </html>
