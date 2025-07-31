@@ -1,604 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pavan Kumar Aravapalli - DevOps Engineer</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-
+  <title>Pavan Kumar Aravapalli — DevOps Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      background-color: #f9f9fb;
-      color: #333;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      background-color: #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 20px;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-    }
-
-    .intro {
-      display: flex;
-      justify-content: center;
-      margin-top: 40px;
-    }
-
-    .intro-box {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 90%;
-      max-width: 1000px;
-      padding: 40px;
-      border-radius: 20px;
-      background-color: rgba(255, 255, 255, 0.75);
-      backdrop-filter: blur(10px);
-      border: 2px solid rgba(0, 123, 255, 0.25);
-      box-shadow: 0 12px 25px rgba(0, 123, 255, 0.12);
-    }
-
-    .intro-left {
-      text-align: center;
-      max-width: 600px;
-    }
-
-    .intro-left img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .intro-left h1 {
-      margin-top: 16px;
-      font-size: 28px;
-    }
-
-    .intro-left .title {
-      color: #007bff;
-      margin-top: 8px;
-      font-size: 18px;
-    }
-
-    .intro-left p {
-      margin-top: 12px;
-      font-size: 16px;
-      color: #555;
-      max-width: 400px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .buttons {
-      margin-top: 20px;
-    }
-
-    .buttons a {
-      display: inline-block;
-      padding: 10px 16px;
-      border-radius: 6px;
-      margin: 0 10px;
-      font-size: 14px;
-      text-decoration: none;
-      transition: all 0.3s;
-    }
-
-    .buttons a:first-child {
-      background-color: #007bff;
-      color: white;
-    }
-
-    .buttons a:first-child:hover {
-      background-color: #0056b3;
-    }
-
-    .buttons a:last-child {
-      background-color: white;
-      color: #007bff;
-      border: 2px solid #007bff;
-    }
-
-    .buttons a:last-child:hover {
-      background-color: #007bff;
-      color: white;
-    }
-
-    .social-icons {
-      margin-top: 20px;
-    }
-
-    .social-icons a {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      width: 36px;
-      height: 36px;
-      margin: 0 8px;
-      font-size: 16px;
-      background-color: #007bff;
-      color: white;
-      border-radius: 50%;
-      text-decoration: none;
-      transition: transform 0.3s;
-    }
-
-    .social-icons a:hover {
-      transform: scale(1.2);
-    }
-.timezone-box {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-left: 40px;
-    }
-
-    .timezone {
-      background: #f4f6ff;
-      padding: 16px;
-      border-radius: 8px;
-      text-align: center;
-      min-width: 100px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    .timezone h4 {
-      font-weight: bold;
-      margin-bottom: 4px;
-      color: #007bff;
-      font-size: 16px;
-    }
-
-    .timezone p {
-      font-size: 14px;
-      margin: 4px 0 0;
-      color: #000;
-    }
-    
-    /* About Section */
-    .about-section {
-      padding: 60px 20px;
-      background-color: #fff;
-      border-top: 1px solid #eee;
-    }
-
-    .about-grid {
-      display: flex;
-      justify-content: space-between;
-      max-width: 1000px;
-      margin: 0 auto;
-      flex-wrap: wrap;
-      gap: 40px;
-    }
-
-    .about-text {
-      flex: 1 1 60%;
-    }
-
-    .about-text h2 {
-      font-size: 28px;
-      color: #007bff;
-      margin-bottom: 20px;
-    }
-
-    .about-text p {
-      font-size: 16px;
-      color: #444;
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-
-    .about-stats {
-      flex: 1 1 30%;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .stat-box {
-      background: #f4f6ff;
-      border-radius: 8px;
-      text-align: center;
-      padding: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    .stat-box h3 {
-      font-size: 24px;
-      color: #007bff;
-      margin: 0;
-    }
-
-    .stat-box p {
-      margin: 8px 0 0;
-      font-size: 14px;
-      color: #444;
-    }
-
-    /* Skills Section */
-    .skills-section {
-      padding: 60px 20px;
-      background-color: #ffffff;
-      border-top: 1px solid #eee;
-      text-align: center;
-    }
-
-    .skills-section h2 {
-      font-size: 28px;
-      color: #007bff;
-      margin-bottom: 30px;
-    }
-
-    .skills-tags {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-    }
-
-    .skills-tags span {
-      background: #fff;
-      border-radius: 999px;
-      padding: 10px 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      font-size: 14px;
-      font-weight: 500;
-      color: #333;
-      border: 1px solid #eee;
-      transition: transform 0.2s ease;
-    }
-
-    .skills-tags span:hover {
-      transform: scale(1.05);
-      background-color: #f0f8ff;
-    }
-
-    /* Experience Section */
-    .experience-section {
-      padding: 80px 20px;
-      background: #fff;
-      text-align: center;
-      border-top: 1px solid #eee;
-    }
-
-    .experience-section h2 {
-      font-size: 28px;
-      color: #007bff;
-      margin-bottom: 60px;
-    }
-
-    .timeline {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding-left: 40px;
-      border-left: 3px solid #007bff;
-      position: relative;
-    }
-
-    .timeline-item {
-      position: relative;
-      margin-bottom: 60px;
-      padding-left: 40px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .timeline-item:hover {
-      transform: scale(1.02);
-      box-shadow: 0 8px 24px rgba(0, 123, 255, 0.1);
-      background: #ffffff;
-      border-radius: 12px;
-    }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -22px;
-      top: 5px;
-      width: 12px;
-      height: 12px;
-      background-color: #007bff;
-      border-radius: 50%;
-      box-shadow: 0 0 0 3px #fff;
-      z-index: 1;
-    }
-
-    .timeline-date {
-      position: absolute;
-      left: -120px;
-      top: 0;
-      font-size: 14px;
-      color: #007bff;
-      font-weight: bold;
-      background: #fff;
-    }
-
-    .timeline-content {
-      background-color: #fff;
-      border-radius: 12px;
-      padding: 20px 25px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-      text-align: left;
-    }
-
-    .timeline-content h3 {
-      margin: 0;
-      font-size: 20px;
-      color: #333;
-    }
-
-    .timeline-content .role {
-      font-size: 15px;
-      color: #007bff;
-      margin: 8px 0 12px;
-    }
-
-    .timeline-content ul {
-      margin: 0;
-      padding-left: 20px;
-    }
-
-    .timeline-content ul li {
-      font-size: 14px;
-      color: #444;
-      line-height: 1.7;
-      margin-bottom: 10px;
-    }
+    body { font-family: 'Inter', sans-serif; margin:0; color:#333; background:#f9f9fb; }
+    #tsparticles { position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; opacity:0.2; }
+    header, section { padding: 40px 20px; max-width:1000px; margin:0 auto; }
+    header { display:flex; justify-content:space-between; align-items:center; background:#fff; box-shadow:0 2px 4px rgba(0,0,0,0.05); position:sticky; top:0; z-index:999; }
+    nav ul { list-style:none; display:flex; gap:20px; margin:0; padding:0; }
+    nav a { text-decoration:none; color:#333; font-weight:500; }
+    .intro-box { display:flex; flex-wrap:wrap; align-items:center; gap:40px; background:rgba(255,255,255,0.75); backdrop-filter: blur(10px); border-radius:20px; margin-top:40px; padding:40px; box-shadow:0 12px 25px rgba(0,123,255,0.12); border:2px solid rgba(0,123,255,0.25); }
+    .intro-left h1 { font-size:28px; margin:16px 0; }
+    .intro-left .title { color:#007bff; font-size:18px; margin-top:8px; }
+    .intro-left p { font-size:16px; color:#555; max-width:400px; margin:auto; }
+    .timezone-box { display:flex; gap:16px; flex-wrap:wrap; margin-left:auto; }
+    .timezone { background:#f4f6ff; padding:16px; text-align:center; border-radius:8px; min-width:120px; box-shadow:0 4px 12px rgba(0,0,0,0.05); }
+    .timezone h4 { color:#007bff; margin-bottom:4px; font-size:16px; }
+    .timezone p { margin:4px 0 0; font-size:14px; color:#000; }
+    h2.section-title { color:#007bff; margin-bottom:20px; font-size:28px; }
+    .timeline { position:relative; padding-left:40px; border-left:3px solid #007bff; margin-top:40px; }
+    .timeline-item { position:relative; margin-bottom:60px; }
+    .timeline-item::before { content:''; position:absolute; left:-22px; top:5px; width:12px; height:12px; background:#007bff; border-radius:50%; box-shadow:0 0 0 3px #fff; }
+    .timeline-date { position:absolute; left:-120px; top:0; color:#007bff; font-weight:bold; font-size:14px; background:#fff; }
+    .timeline-content h3 { margin:0; font-size:20px; color:#333; }
+    .timeline-content .role { color:#007bff; font-size:15px; margin:8px 0; }
+    .timeline-content ul { padding-left:20px; color:#444; font-size:14px; line-height:1.7; }
+    .stat-box { background:#f4f6ff; padding:20px; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:center; }
+    .stat-box h3 { color:#007bff; font-size:24px; margin:0; }
+    .stat-box p { margin:8px 0 0; font-size:14px; color:#444; }
+    .skills-tags span { display:inline-block; background:#fff; border:1px solid #eee; border-radius:999px; padding:10px 20px; margin:5px; font-size:14px; color:#333; transition:transform .2s; }
+    .skills-tags span:hover { transform:scale(1.05); background:#f0f8ff; }
+    .certs, .contact-grid { display:flex; flex-wrap:wrap; gap:30px; overflow-x:auto; padding-bottom:10px; }
+    .cert-card { flex:0 1 calc(25% - 30px); min-width:250px; background:#fff; padding:20px; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.08); }
+    .cert-card img { height:80px; margin-bottom:15px; }
+    .cert-card h4 { font-size:16px; font-weight:bold; margin-bottom:10px; }
+    .cert-card p { margin:2px 0; font-size:14px; color:#555; }
+    .cert-card a { margin-top:12px; display:inline-block; text-decoration:none; padding:8px 16px; border-radius:6px; color:#fff; background:#1f4cff; font-size:13px; }
   </style>
-
 </head>
 <body>
- <body>
+  <div id="tsparticles"></div>
+
   <header>
     <h2>Pavan Kumar Aravapalli</h2>
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Intro Section -->
   <section class="intro">
     <div class="intro-box">
       <div class="intro-left">
-        <img src="profile.jpg" alt="Pavan Kumar Aravapalli" />
         <h1>Pavan Kumar Aravapalli</h1>
-        <h2 class="title">Certified DevOps Engineer</h2>
+        <h2 class="title">AWS Certified DevOps Engineer</h2>
         <p>Experienced DevOps Engineer specializing in cloud infrastructure, automation, and CI/CD pipelines.</p>
         <div class="buttons">
-          <a href="mailto:pavankumar23051@gmail.com"><i class="fas fa-envelope"></i> Contact Me</a>
-          <a href="#experience"><i class="fas fa-briefcase"></i> View My Work</a>
-        </div>
-        <div class="social-icons">
-          <a href="https://www.linkedin.com/in/apavankumar7" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://github.com/PavanKumarap5" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="mailto:pavankumar23051@gmail.com"><i class="fas fa-envelope"></i></a>
+          <a href="mailto:you@example.com">Contact Me</a>
+          <a href="#experience">View My Work</a>
         </div>
       </div>
-      
-<div class="timezone-box">
-  <div class="timezone"><h4>PST</h4><p class="pst-time"></p></div>
-  <div class="timezone"><h4>CST</h4><p class="cst-time"></p></div>
-  <div class="timezone"><h4>EST</h4><p class="est-time"></p></div>
-</div> 
-      
-  </section>
-  <!-- About Section -->
-  <section id="about" class="about-section">
-    <div class="about-grid">
-      <div class="about-text">
-        <h2>About Me</h2>
-        <p>I'm a passionate DevOps Engineer with over 4 years of experience in automating cloud infrastructure, CI/CD pipelines, and modernizing application deployments.</p>
-        <p>I specialize in AWS, Azure, Kubernetes, and Terraform, helping teams build scalable and resilient systems. I’ve designed secure cloud infrastructure, automated provisioning with Terraform, and improved system reliability with tools like Prometheus, ArgoCD, and AWS CloudWatch.</p>
-        <p>I love collaborating with developers, SREs, and security teams to drive improvement. Whether it’s building from scratch or improving existing systems, I bring strong technical and problem-solving skills to every project.</p>
-      </div>
-      <div class="about-stats">
-        <div class="stat-box"><h3>4+</h3><p>Years Experience</p></div>
-        <div class="stat-box"><h3>45+</h3><p>Tools & Platforms</p></div>
-        <div class="stat-box"><h3>5</h3><p>Certifications</p></div>
+      <div class="timezone-box">
+        <div class="timezone"><h4>PST</h4><p class="pst-time">--:--:--</p></div>
+        <div class="timezone"><h4>CST</h4><p class="cst-time">--:--:--</p></div>
+        <div class="timezone"><h4>EST</h4><p class="est-time">--:--:--</p></div>
       </div>
     </div>
   </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="skills-section">
-    <h2>Skills</h2>
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p>DevOps Engineer with 6+ years in cloud infrastructure automation, especially AWS, Kubernetes, and GitHub Actions. I focus on security, scalability, and cost optimization. :contentReference[oaicite:1]{index=1}</p>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Skills</h2>
     <div class="skills-tags">
-      <span>AWS</span><span>Azure</span><span>GCP</span><span>Terraform</span><span>CloudFormation</span>
-      <span>Docker</span><span>Kubernetes</span><span>Helm</span><span>OpenShift</span><span>Istio</span>
-      <span>Ansible</span><span>Puppet</span><span>Jenkins</span><span>GitHub Actions</span><span>GitLab CI/CD</span>
-      <span>Azure DevOps</span><span>ArgoCD</span><span>Prometheus</span><span>Grafana</span><span>ELK Stack</span>
-      <span>Datadog</span><span>Splunk</span><span>AWS CloudWatch</span><span>Azure Monitor</span><span>Bash</span>
-      <span>Python</span><span>PowerShell</span><span>AWS IAM</span><span>AAD</span><span>SonarQube</span>
-      <span>Snyk</span><span>Trivy</span><span>JMeter</span><span>OPA</span>
+      <span>AWS</span><span>Kubernetes</span><span>Terraform</span><span>Docker</span><span>CI/CD</span><span>GitHub Actions</span><span>Helm</span><span>Bash</span>
     </div>
   </section>
-  
-<!-- Experience Section -->
-  <section id="experience" class="experience-section">
-    <h2>Experience</h2>
+
+  <section id="experience">
+    <h2 class="section-title">Experience</h2>
     <div class="timeline">
-
-      <div class="timeline-item" data-aos="fade-up" data-aos-duration="1000">
-        <div class="timeline-date">2023 - Present</div>
+      <div class="timeline-item">
+        <div class="timeline-date">2022 – Present</div>
         <div class="timeline-content">
-          <h3>Liberty Mutual Finance</h3>
+          <h3>Veritiv Corporation</h3>
           <p class="role">DevOps Engineer</p>
           <ul>
-            <li>Automated AWS infrastructure using Terraform for consistent provisioning across environments.</li>
-            <li>Managed GitHub Actions and Jenkins pipelines for microservices deployment with built-in quality gates.</li>
-            <li>Used ArgoCD and Helm to deploy workloads to Amazon EKS with minimal downtime.</li>
-            <li>Configured Prometheus, Grafana, and CloudWatch for proactive monitoring and alerting.</li>
-            <li>Collaborated with security teams to implement IAM roles, SonarQube, Snyk, and OPA policies for compliance.</li>
+            <li>Built CI/CD pipelines in GitHub Actions and provisioned infrastructure with Terraform on EKS clusters.</li>
+            <li>Migrated services to serverless architecture using Lambda and API Gateway, cutting costs by ~$200K/year. :contentReference[oaicite:2]{index=2}</li>
           </ul>
         </div>
       </div>
-
-      <div class="timeline-item" data-aos="fade-up" data-aos-duration="1000">
-        <div class="timeline-date">2021 - 2023</div>
+      <div class="timeline-item">
+        <div class="timeline-date">2019 – 2022</div>
         <div class="timeline-content">
-          <h3>Synechron INC</h3>
+          <h3>Petco</h3>
           <p class="role">DevOps Engineer</p>
           <ul>
-            <li>Implemented CI/CD pipelines in Azure DevOps to automate deployment of microservices in AKS clusters.</li>
-            <li>Managed infrastructure automation with Ansible and Terraform for hybrid environments.</li>
-            <li>Built Docker images and integrated them into GitLab pipelines for QA and staging environments.</li>
-            <li>Used ELK Stack and Datadog for log aggregation, performance monitoring, and metrics visualization.</li>
-            <li>Created Bash and Python scripts to streamline operational workflows and data migration.</li>
+            <li>Implemented auto‑scaling solutions for EKS and integrated monitoring with Prometheus & Grafana. :contentReference[oaicite:3]{index=3}</li>
           </ul>
         </div>
       </div>
-
     </div>
   </section>
-  
-<!-- Certifications Section (Exact replica of Alexander Khvan's) -->
-<section id="certifications" class="certifications-section" style="padding: 60px 20px; background: #fff; text-align: center; border-top: 1px solid #eee;">
-  <h2 style="font-size: 28px; color: #1f1f1f; margin-bottom: 20px;">Certifications</h2>
-  <div style="width: 60px; height: 4px; background: #007bff; margin: 0 auto 40px auto; border-radius: 2px;"></div>
 
-  <div style="display: flex; flex-wrap: nowrap; justify-content: center; gap: 30px; max-width: 1200px; margin: 0 auto; overflow-x: auto; padding-bottom: 10px;">
-    <!-- Certification Card Template -->
-    <div style="flex: 0 1 calc(25% - 30px); min-width: 250px; background: #fff; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); padding: 20px 15px; border-top: 4px solid #1f4cff;">
-      <img src="images/aws.png" alt="AWS Logo" style="height: 80px; margin-bottom: 15px;">
-      <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 10px;">AWS Certified Solutions Architect - Associate (SAA-C03)</h4>
-      <p style="font-size: 14px; color: #555;">AWS</p>
-      <p style="font-size: 13px; color: #888;">Issued 2025</p>
-      <a href="#" target="_blank" style="display: inline-block; margin-top: 12px; background: #1f4cff; color: #fff; padding: 8px 16px; font-size: 13px; border-radius: 6px; text-decoration: none;"><i class="fas fa-certificate"></i> View Certificate</a>
+  <section id="certifications">
+    <h2 class="section-title">Certifications</h2>
+    <div class="certs">
+      <div class="cert-card">
+        <img src="images/aws.png" alt="AWS">
+        <h4>AWS Certified Solutions Architect – Associate</h4>
+        <p>AWS</p><p>Issued 2025</p>
+        <a href="#" target="_blank">View Certificate</a>
+      </div>
+      <div class="cert-card">
+        <img src="images/terraform.png" alt="Terraform">
+        <h4>HashiCorp Certified: Terraform Associate (003)</h4>
+        <p>HashiCorp</p><p>Issued 2024</p>
+        <a href="#" target="_blank">View Certificate</a>
+      </div>
+      <!-- Add more cards -->
     </div>
+  </section>
 
-    <div style="flex: 0 1 calc(25% - 30px); min-width: 250px; background: #fff; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); padding: 20px 15px; border-top: 4px solid #28a745;">
-      <img src="images/terraform.png" alt="Terraform Logo" style="height: 80px; margin-bottom: 15px;">
-      <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 10px;">HashiCorp Certified: Terraform Associate (003)</h4>
-      <p style="font-size: 14px; color: #555;">HashiCorp</p>
-      <p style="font-size: 13px; color: #888;">Issued 2024</p>
-      <a href="#" target="_blank" style="display: inline-block; margin-top: 12px; background: #28a745; color: #fff; padding: 8px 16px; font-size: 13px; border-radius: 6px; text-decoration: none;"><i class="fas fa-certificate"></i> View Certificate</a>
+  <section id="contact">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="contact-grid">
+      <div><strong>Email:</strong><br><a href="mailto:you@example.com">you@example.com</a></div>
+      <div><strong>Location:</strong><br>Your City, Your State</div>
+      <div><strong>LinkedIn:</strong><br><a href="#">linkedin.com/in/yourprofile</a></div>
     </div>
+  </section>
 
-    <div style="flex: 0 1 calc(25% - 30px); min-width: 250px; background: #fff; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); padding: 20px 15px; border-top: 4px solid #dc3545;">
-      <img src="images/cka.png" alt="CKA Logo" style="height: 80px; margin-bottom: 15px;">
-      <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 10px;">Certified Kubernetes Administrator (CKA)</h4>
-      <p style="font-size: 14px; color: #555;">Linux Foundation</p>
-      <p style="font-size: 13px; color: #888;">Issued 2024</p>
-      <a href="#" target="_blank" style="display: inline-block; margin-top: 12px; background: #dc3545; color: #fff; padding: 8px 16px; font-size: 13px; border-radius: 6px; text-decoration: none;"><i class="fas fa-certificate"></i> View Certificate</a>
-    </div>
-
-    <div style="flex: 0 1 calc(25% - 30px); min-width: 250px; background: #fff; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); padding: 20px 15px; border-top: 4px solid #a0522d;">
-      <img src="images/ckad.png" alt="CKAD Logo" style="height: 80px; margin-bottom: 15px;">
-      <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 10px;">Certified Kubernetes Application Developer (CKAD)</h4>
-      <p style="font-size: 14px; color: #555;">Linux Foundation</p>
-      <p style="font-size: 13px; color: #888;">Issued 2024</p>
-      <a href="#" target="_blank" style="display: inline-block; margin-top: 12px; background: #a0522d; color: #fff; padding: 8px 16px; font-size: 13px; border-radius: 6px; text-decoration: none;"><i class="fas fa-certificate"></i> View Certificate</a>
-    </div>
-  </div>
-</section>
-
+  <!-- Clock Timer -->
   <script>
     function updateTime() {
+      const fmt = { hour:'2-digit', minute:'2-digit', second:'2-digit' };
+      const pst = new Date().toLocaleTimeString('en-US', { timeZone:'America/Los_Angeles', ...fmt });
+      const cst = new Date().toLocaleTimeString('en-US', { timeZone:'America/Chicago', ...fmt });
+      const est = new Date().toLocaleTimeString('en-US', { timeZone:'America/New_York', ...fmt });
       const now = new Date();
-      const format = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
-
-      const pst = now.toLocaleTimeString('en-US', { timeZone: 'America/Los_Angeles', ...format });
-      const cst = now.toLocaleTimeString('en-US', { timeZone: 'America/Chicago', ...format });
-      const est = now.toLocaleTimeString('en-US', { timeZone: 'America/New_York', ...format });
-
-      const pstDate = now.toLocaleDateString('en-US', { timeZone: 'America/Los_Angeles' });
-      const cstDate = now.toLocaleDateString('en-US', { timeZone: 'America/Chicago' });
-      const estDate = now.toLocaleDateString('en-US', { timeZone: 'America/New_York' });
-
-      document.querySelector('.pst-time').innerHTML =
-          <strong style="color:#000">${pst}</strong><br>
-          <span style="font-size:12px;">${pstDate}</span>
-        `;
-      });
-      document.querySelector('.cst-time').forEach(el => {
-        el.innerHTML = `
-          <strong style="color:#000">${cst}</strong><br>
-          <span style="font-size:12px;">${cstDate}</span>
-        `;
-      });
-      document.querySelector('.est-time').forEach(el => {
-        el.innerHTML = `
-          <strong style="color:#000">${est}</strong><br>
-          <span style="font-size:12px;">${estDate}</span>
-        `;
-      });
+      document.querySelector('.pst-time').innerHTML = `<strong>${pst}</strong><br><span style="font-size:12px">${now.toLocaleDateString('en-US', { timeZone:'America/Los_Angeles'})}</span>`;
+      document.querySelector('.cst-time').innerHTML = `<strong>${cst}</strong><br><span style="font-size:12px">${now.toLocaleDateString('en-US', { timeZone:'America/Chicago'})}</span>`;
+      document.querySelector('.est-time').innerHTML = `<strong>${est}</strong><br><span style="font-size:12px">${now.toLocaleDateString('en-US', { timeZone:'America/New_York'})}</span>`;
     }
-
     setInterval(updateTime, 1000);
     updateTime();
-    AOS.init();
   </script>
-   <!-- Get in Touch Section -->
-<section id="contact" style="padding: 80px 20px; background: #fff; border-top: 1px solid #eee;">
-  <h2 style="text-align: center; font-size: 28px; color: #1f1f1f; margin-bottom: 20px;">Get In Touch</h2>
-  <div style="width: 60px; height: 4px; background: #007bff; margin: 0 auto 40px auto; border-radius: 2px;"></div>
 
-  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between;">
-    <!-- Left Contact Info -->
-    <div style="flex: 1 1 35%; display: flex; flex-direction: column; gap: 20px;">
-      <div style="background: #f4f6ff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-        <i class="fas fa-envelope" style="color: #007bff; margin-right: 10px;"></i><strong>Email</strong><br>
-        <a href="mailto:pavankumar23051@gmail.com" style="color: #007bff; text-decoration: none;">pavankumar23051@gmail.com</a>
-      </div>
-      <div style="background: #f4f6ff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-        <i class="fas fa-map-marker-alt" style="color: #007bff; margin-right: 10px;"></i><strong>Location</strong><br>
-        Plano, TX
-      </div>
-      <div style="background: #f4f6ff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-        <i class="fas fa-phone" style="color: #007bff; margin-right: 10px;"></i><strong>Phone</strong><br>
-        (513) 570-2537
-      </div>
-      <div style="background: #f4f6ff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-        <i class="fab fa-linkedin" style="color: #007bff; margin-right: 10px;"></i><strong>LinkedIn</strong><br>
-        <a href="https://www.linkedin.com/in/apavankumar7" target="_blank" style="color: #007bff; text-decoration: none;">linkedin.com/in/apavankumar7</a>
-      </div>
-    </div>
-
-    <!-- Right Contact Form -->
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="flex: 1 1 60%; display: flex; flex-direction: column; gap: 20px;">
-      <input type="text" name="name" placeholder="Your Name" required style="padding: 12px 16px; border: 1px solid #ccc; border-radius: 8px;">
-      <input type="email" name="email" placeholder="Your Email" required style="padding: 12px 16px; border: 1px solid #ccc; border-radius: 8px;">
-      <input type="text" name="subject" placeholder="Subject" required style="padding: 12px 16px; border: 1px solid #ccc; border-radius: 8px;">
-      <textarea name="message" rows="5" placeholder="Your Message" required style="padding: 12px 16px; border: 1px solid #ccc; border-radius: 8px;"></textarea>
-      <button type="submit" style="background: #007bff; color: #fff; border: none; padding: 14px; border-radius: 8px; font-size: 16px; cursor: pointer;">
-        <i class="fas fa-paper-plane"></i> Send Message
-      </button>
-    </form>
-  </div>
-</section>
-
+  <!-- Particle Background -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <script> tsParticles.load("tsparticles", { fullScreen:{enable:true}, particles:{ number:{value:60}, color:{value:"#007bff"}, shape:{type:"circle"}, opacity:{value:0.4}, size:{value:3}, move:{enable:true,speed:2}, links:{enable:true,distance:150,color:"#007bff",opacity:0.3,width:1}}});</script>
 </body>
 </html>
