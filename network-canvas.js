@@ -35,7 +35,7 @@ function drawNetwork() {
 
     ctx.beginPath();
     ctx.arc(p.x, p.y, 1.5, 0, 2 * Math.PI);
-    ctx.fillStyle = '#cccccc';
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
     ctx.fill();
   }
 
@@ -47,7 +47,7 @@ function drawNetwork() {
         ctx.beginPath();
         ctx.moveTo(a.x, a.y);
         ctx.lineTo(b.x, b.y);
-        ctx.strokeStyle = 'rgba(200, 200, 200, 0.2)';
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
         ctx.stroke();
       }
     }
@@ -56,7 +56,7 @@ function drawNetwork() {
   requestAnimationFrame(drawNetwork);
 }
 
-resizeCanvas();
+resizeCanvas();a
 window.addEventListener('resize', resizeCanvas);
 requestAnimationFrame(drawNetwork);
 
